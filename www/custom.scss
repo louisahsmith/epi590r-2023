@@ -1,0 +1,299 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+//
+// Color system
+//
+$white:    #fff !default;
+$gray-100: #eceff4 !default;
+$gray-200: #e5e9f0 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #d8dee9 !default;
+$gray-500: #aaa !default;
+$gray-600: #777 !default;
+$gray-700: #434c5e !default;
+$gray-800: #3b4252 !default;
+$gray-900: #2e3440 !default;
+$black:    #000 !default;
+
+$blue:    #88c0d0 !default; // frost
+$indigo:  #5e81ac !default; // frost
+$teal:    #8fbcbb !default; // frost
+$cyan:    #81a1c1 !default; // frost
+$purple:  #b48ead !default; // aurora
+$red:     #bf616a !default; // aurora
+$orange:  #d08770 !default; // aurora
+$yellow:  #ebcb8b !default; // aurora
+$green:   #a3be8c !default; // aurora
+
+$pink:    $red !default;
+
+$primary:       $indigo !default;
+$secondary:     $gray-500 !default;
+
+$success:       $green !default;
+$info:          $indigo !default;
+$warning:       $yellow !default;
+$danger:        $orange !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+$bs-body-color: $gray-900 !default;
+$bs-link-color: $red !default;
+$bs-code-color: $pink !default;
+
+$link-color: $purple !default;
+$monobackgroundcolor: $light !default;
+$code-bg: $light !default;
+$code-color: $red !default;
+
+$callout-color-note: $purple !default;
+$callout-color-tip: $green !default;
+$callout-color-caution: $indigo !default;
+$callout-color-warning: $yellow !default;
+$callout-color-important: $orange !default;
+
+$callout-color-note-light: #b48ead80 !default;
+$callout-color-tip-light: #a3be8c80 !default;
+$callout-color-caution-light: #5e81ac80 !default;
+$callout-color-warning-light: #ebcb8b80 !default;
+$callout-color-important-light: #d0877080 !default;
+
+$min-contrast-ratio:   1.28 !default;
+
+// Fonts
+
+$headings-font-family:   "Montserrat", sans-serif !default;
+$headings-font-weight:    400 !default;
+$headings-line-height:    1.1 !default;
+$hand-font-family: "Permanent Marker", cursive !default;
+
+// Buttons
+
+$input-btn-padding-x:         1rem !default;
+
+// Navbar
+
+$navbar-light-color:                rgba($black, .7) !default;
+$navbar-light-hover-color:          $black !default;
+$navbar-light-active-color:         $black !default;
+
+// Pagination
+
+$pagination-hover-color:            $white !default;
+$pagination-hover-bg:               $primary !default;
+$pagination-hover-border-color:     $primary !default;
+
+// fonts
+$font-family-sans-serif: $headings-font-family;
+$presentation-font-size-root: 36px !default;
+
+
+// colors
+$body-bg: $white !default;
+$body-color: $bs-body-color !default;
+$link-color: $bs-link-color !default;
+
+// headings
+$presentation-heading-font: "Montserrat", sans-serif !default;
+$presentation-heading-font-weight: 400 !default;
+$presentation-heading-letter-spacing: -0.08em;
+
+// code blocks
+//$code-block-border-color: lighten($link-color, 10%) !default;
+//$code-block-bg: transparent !default;
+
+// Buttons
+
+.btn {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+
+&-secondary,
+  &-warning {
+    color: $white;
+  }
+}
+
+/*-- scss:rules --*/
+
+.small-code{
+    font-size: smaller;
+    margin-left: -20px;
+    margin-right: -40px;
+}
+
+/*-- scss:rules --*/
+
+// Fix links so they are not cut off
+.reveal a {
+  line-height: 1.3em;
+}
+
+.hand > p{
+  font-family: $hand-font-family;
+  font-size: 125%;
+}
+
+.center {
+  text-align: center !important; 
+}
+
+.smaller {
+  font-size: 0.7em;
+}
+
+// .reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal h6 {
+//   font-family: $headings-font-family;
+//   font-weight: $headings-font-weight;
+// }
+
+//.reveal div.sourceCode {
+ // border: none;
+//  border-radius: 0px;
+//  margin-bottom: 10px !important;
+//}
+
+div.cell {
+  padding-bottom: 0px; // why not 15?
+  padding-top: 0px; // why not 10?
+}
+
+div.sourceCode pre code {
+  padding: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+div.sourceCode {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 20px 0px rgba(0,0,0,.45);
+  height: fit-content !important;
+  //margin: auto !important;
+}
+
+.code {
+  color: #7c8ba9;
+  font-size: .9em;
+}
+
+.code span.er {
+  color: #ebcb8b;
+  text-decoration: none;
+}
+
+.code span.co {
+  color: #7c8ba9;
+}
+pre code {
+  //background-color: #ebeef2;
+  color: #7c8ba9;
+  padding-left: 15px;
+}
+
+div.cell-output pre code {
+  font-size: .9em;
+}
+
+pre.sourceCode {
+    border: none;
+    font-size: .875em;
+    overflow: visible !important;
+    padding: 0 !important;
+}
+
+table td {
+  border-bottom: 0.5px solid;
+}
+
+table th {
+  border-bottom: 2px solid;
+}
+
+/// reveal-specific
+.reveal div.cell { // goes around input and output
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.reveal div.sourceCode pre code { // code within dark box
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 0;
+  font-size: .8em;
+}
+
+.reveal div.cell-output-display {
+  padding-top: 10px;
+}
+
+.reveal div.sourceCode { // dark box
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 20px 0px rgba(0,0,0,.45);
+  height: fit-content !important;
+}
+
+.reveal code {
+  color: #7c8ba9;
+  font-size: .9em;
+}
+
+code span.er {
+  color: #ebcb8b;
+  text-decoration: none;
+}
+
+code span.co {
+  color: #7c8ba9;
+}
+
+.reveal pre {
+    background-color: transparent;
+}
+
+.reveal pre code { // code within output block
+  background-color: #ebeef2;
+  color: #7c8ba9;
+  max-height: max-content;
+  // padding-left: 15px;
+}
+
+.reveal div.cell-output {// output block
+    padding-top: 0.35em;
+}
+.reveal div.cell-output pre code { 
+  font-size: .9em;
+  padding-left:0;
+}
+
+.reveal table td {
+  border-bottom: 0.5px solid;
+}
+
+.reveal table th {
+  border-bottom: 2px solid;
+}
+
+.reveal .slide ul, .reveal .slide ol {
+    margin-bottom: 0 !important;
+}
+
+.reveal div.cell {
+  padding-top: 0 !important;
+}
+
+.reveal div.cell :first-child {
+  padding-top: 0 !important;
+}
+
+.reveal div.larger-code {
+  font-size: 1.75em;;
+}
+
+.reveal div.cell {
+  height: max-content !important;
+}

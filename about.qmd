@@ -1,0 +1,162 @@
+---
+title: "Syllabus"
+---
+
+<!-- rmarkdown::pandoc_convert("../Admin/EPI 590R syllabus.docx", to = "markdown", options = c("--wrap=preserve"), verbose = TRUE) -->
+
+**DEPARTMENT:** Epidemiology
+
+**COURSE NUMBER:** EPI 590R
+
+**CREDIT HOURS:** 1
+
+**SEMESTER:** Fall 2023 (Preterm)
+
+**COURSE TITLE:** R Bootcamp
+
+**CLASS HOURS AND LOCATION:** August 14 & 15, 9am-12:30pm & 1:30pm-5pm
+
+**INSTRUCTOR NAME:** Louisa Smith
+
+**INSTRUCTOR EMAIL:** [l.smith@northeastern.edu](mailto:l.smith@northeastern.edu)
+
+<!-- Teaching Assistant(s): -->
+
+<!--   ----------------------------------------------------------------------------- -->
+
+<!--   Name              Email             Office Hours      Lab Time and Location -->
+
+<!--   ----------------- ----------------- ----------------- ----------------------- -->
+
+<!--   ----------------------------------------------------------------------------- -->
+
+# COURSE DESCRIPTION
+
+This course introduces best practices for conducting reproducible epidemiologic analyses in R. Topics include the R project and package management system, reproducible tables and statistical output, writing reports or manuscripts in *quarto*, developing a workflow using the *targets* package, and version control using Git/GitHub. This fast-paced course will intersperse short lectures with activities in R, building up to a full-blown reproducible project.
+
+Prerequisites: Basic knowledge of R (approximately equivalent to EPI 534 or BIOS 544). Prerequisite skills should include reading in data, basic data cleaning, simple model fitting, and saving results.
+
+## CONCENTRATION COMPETENCIES
+
+-   Utilize statistical software to conduct epidemiological analysis.
+
+## COURSE LEARNING OBJECTIVES
+
+-   By the end of Lecture 1, students will be able to identify the benefits of a reproducible workflow for conducting analyses in R and specify the drawbacks of their current workflows.
+
+-   By the end of Lecture 2, students will be able to create and open an R Project and navigate the filesystem within that project using the *here* package.
+
+-   By the end of Lecture 3, students will be able to create a repository for their R project on GitHub and commit changes.
+
+-   By the end of Lecture 4, students will be able to initiate a package environment using *renv* and describe how it works to ensure package consistency.
+
+-   By the end of Lecture 5, students will be able to create a table of descriptive statistics and a table for regression model output and extract values from the tables.
+
+-   By the end of Lecture 6, students will be able to render a quarto document as a Word or html file and identify when to use various chunk options.
+
+-   By the end of Lecture 7, students will be able to wrap aspects of their analysis within functions.
+
+-   By the end of Lecture 8, students will be able to initiate a *targets* workflow and create appropriate targets using their analysis functions.
+
+> Note: Lecture numbers and their order are subject to change.
+
+## EVALUATION
+
+| Basis of Course Grade |     |
+|-----------------------|-----|
+| In-class activities   | 30% |
+| Participation         | 30% |
+| Final project         | 40% |
+
+| Final grade point cutoffs |            |
+|---------------------------|------------|
+| S                         | \[75, 100) |
+| U                         | \[0, 75)   |
+
+## COURSE STRUCTURE
+
+**Pre-work:** Students are expected to come prepared with R, RStudio, git, and the relevant R packages installed on a laptop. Students should also create accounts on Github. Instructions for doing so and a brief activity to confirm installation will be communicated prior to the course, and I will be available via email to troubleshoot installation problems.
+
+**In-class activities:** The bulk of the course content will be covered over the course of two daylong sessions consisting of lectures interspersed with individual and group work.
+
+**Participation:** In-class participation consists not only of volunteering answers and/or asking questions during lectures, but also interacting with peers in small-group sessions. Small-group work will give you the opportunity to ask and answer questions with classmates. Participation includes showing a classmate how to solve a problem (not just doing it for them), asking a classmate or me for help and describing the initial steps to solve the problem, and sharing solutions with the whole class.
+
+**Final project:** The final project will provide an opportunity to bring together the skills you have learned in class and will be due after the course (tentative due date August 29). The project will consist of a reproducible, real-world epidemiologic analysis. The goal of the analysis will be the process and workflow rather than the scientific process or conclusions. The final project will be submitted via GitHub.
+
++-------------------------------------------------------------------+---------------------------+--------------+
+| MPH/MSPH Concentration Competency                                 | Representative Assessment |              |
++:==================================================================+:==========================+==============+
+| Utilize statistical software to conduct epidemiological analysis. | Final project             |              |
++-------------------------------------------------------------------+---------------------------+--------------+
+
+# COURSE POLICIES
+
+## Required and/or recommended texts
+
+Recommended readings will consist mainly of package documentation and blog posts. Links to these freely available texts are included in the course calendar; more resources may be provided with the course materials.
+
+## Attendance
+
+Because there are only two in-person class sessions, these are integral and mandatory parts of the course. Attendance and preparation are required. If you are unable to attend a class session due to illness or emergency, contact the instructor as soon as possible to plan to make up the missed work.
+
+## Course Participation
+
+The success of the course relies on active in-class student participation and preparation. You are expected to prepare by completing the required activities before the first class. In-class participation consists not only of volunteering answers and/or asking questions during lectures, but also interacting with peers in small-group sessions. Small-group work will give you the opportunity to ask and answer questions with classmates. Participation includes showing a classmate how to solve a problem (not just doing it for them), asking a classmate or teacher for help and describing the initial steps to solve the problem, and sharing solutions with the whole class.
+
+## Assignment Submission
+
+In-class activities and the final project will be submitted via GitHub. Instructions will be provided in class.
+
+## Communication
+
+Prior to the course, the instructor can be contacted via email. After the course begins, the instructor can be contacted via email for questions specific to a student, and discussions and questions that may affect the whole class will take place on GitHub.
+
+If your situation changes regarding health, housing, or in any other regard with respect to your ability to participate in the class, please avail yourself to any relevant [Emory student support organizations](https://www.sph.emory.edu/rollins-life/resources/index.html) and notify me as soon as feasible. **It is much easier for me to address your needs if I know about them as soon as they arise.** While I may not be able to successfully respond to every request, I emphasize that my goal is to treat you all equitably and do what I can to help you succeed in this course.
+
+## Diversity and Inclusion
+
+In this course, we value the diverse perspectives, experiences, and backgrounds of all students. Our goal is for all students to be able to participate fully and have their learning supported both in and out of class. Therefore, we will work to foster an environment in which each student is able to hear and respect one another. Working as a team is not always easy and sometimes involves difficult conversations. We will approach these conversations with empathy and the openness to deepen our understanding of multiple perspectives. We are here to support you and your colleagues throughout the course. Please let us know of ways to improve the course and best support your learning.
+
+If you experience barriers to learning in this course, please do not hesitate to discuss them with me and the [Office of Diversity, Equity, and Inclusion](https://equityandinclusion.emory.edu/equity-inclusion/index.html).
+
+# RSPH POLICIES
+
+## Accessibility and Accommodations
+
+Accessibility Services works with students who have disabilities to provide reasonable accommodations. In order to receive consideration for reasonable accommodations, you must contact the Office of Accessibility Services (OAS). It is the responsibility of the student to register with OAS. Please note that accommodations are not retroactive and that disability accommodations are not provided until an accommodation letter has been processed.
+
+Students who registered with OAS and have a letter outlining their academic accommodations are strongly encouraged to coordinate a meeting time with me to discuss a protocol to implement the accommodations as needed throughout the semester. This meeting should occur as early in the semester as possible.
+
+Contact Accessibility Services for more information at (404) 727-9877 or [[accessibility\@emory.edu]{.underline}](mailto:accessibility@emory.edu). Additional information is available at the OAS website at [[http://equityandinclusion.emory.edu/access/students/index.html]{.underline}](http://equityandinclusion.emory.edu/access/students/index.html)
+
+## Honor Code
+
+You are bound by Emory University's Student Honor and Conduct Code. RSPH requires that all material submitted by a student fulfilling his or her academic course of study must be the original work of the student. Violations of academic honor include any action by a student indicating dishonesty or a lack of integrity in academic ethics. *Academic dishonesty refers to cheating, plagiarizing, assisting other students without authorization, lying, tampering, or stealing in performing any academic work, and will not be tolerated under any circumstances.*
+
+The RSPH Honor Code states: "Plagiarism is the act of presenting as one's own work the expression, words, or ideas of another person whether published or unpublished (including the work of another student). A writer's work should be regarded as his/her own property." (<http://www.sph.emory.edu/cms/current_students/enrollment_services/honor_code.html>)
+
+# COURSE CALENDAR & OUTLINE
+
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| Lecture | Date                  | Class Topic                                      | Readings                                                                                             | Assignments       |
++=========+=======================+==================================================+======================================================================================================+===================+
+| 1       | 14-Aug                | Reproducible research and workflows in R         | -   <https://www.tidyverse.org/blog/2017/12/workflow-vs-script/>                                     | In-class activity |
+|         |                       |                                                  | -   Perkel, J. M. (2018). A toolkit for data transparency. *Nature*, *560* (7719), 513-515.          |                   |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 2       | 14-Aug                | Introduction to Git and GitHub                   | -   <https://happygitwithr.com/>                                                                     | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 3       | 14-Aug                | R projects and file management                   | -   <https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects> | In-class activity |
+|         |                       |                                                  | -   <https://here.r-lib.org/>                                                                        |                   |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 4       | 14-Aug                | Package management with renv                     | -   <https://rstudio.github.io/renv/articles/renv.html>                                              | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 5       | 15-Aug                | Descriptive and regression tables with gtsummary | -   <https://www.danieldsjoberg.com/gtsummary/>                                                      | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 6       | 15-Aug                | Introduction to quarto                           | -   <https://quarto.org/docs/guide/>                                                                 | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 7       | 15-Aug                | Function wrapping                                | -   <https://adv-r.hadley.nz/functions.html>                                                         | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+| 8       | 15-Aug                | Introduction to targets                          | -   <https://books.ropensci.org/targets/>                                                            | In-class activity |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+
+|         | August 29 (tentative) |                                                  |                                                                                                      | Final project due |
++---------+-----------------------+--------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------+

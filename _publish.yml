@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 51e7a530-f84d-47db-9d5b-f7cc5213d210
+      url: 'https://cute-gingersnap-7d8ba2.netlify.app'

@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "day-1/03-projects.html",
+    "href": "day-1/03-projects.html",
+    "title": "R projects and file management",
+    "section": "",
+    "text": "Overview\nHaving a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the {here} package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The {here} package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with setwd(). Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nCreate an R project for this workshop (you do want to check off “Use renv” – we’ll get to that later)\nInstall the {here} package\nDownload the .csv file at https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv\nCreate a data folder within your R project directory and move the nlsy.csv file there.\nRun here::here(\"data\", \"nlsy.csv\") and see what file path prints out. Compare with your neighbor.\nRun read.csv(here::here(\"data\", \"nlsy.csv\")) to make sure your can read in the file.\nRestart the R session to start fresh!\n\n\n\nResources\n\nJenny Bryan’s blog post: Project-oriented workflow\nAnother blog post by Malcolm Barrett\n{here} package documentation:"
+  },
+  {
+    "objectID": "day-1/04-renv.html",
+    "href": "day-1/04-renv.html",
+    "title": "Package management with {renv}",
+    "section": "",
+    "text": "Overview\n{renv} is a package management tool for R that helps you create isolated and reproducible R environments. It allows you to specify the exact versions of R packages that your project depends on, ensuring that your code runs consistently across different environments.\nWith {renv}, you can create a project-specific library of packages, which are separate from your global R library. This allows you to have different versions of packages for different projects and ensures that your project dependencies are self-contained. {renv} also provides tools for managing and resolving package dependencies, making it easier to collaborate with others and share your code.\nTo use {renv} in your projects, set up the project environment by running renv::init(). This command creates an renv.lock file, which specifies the exact versions of packages needed for the project. Other people can then replicate the environment by running renv::restore() using the renv.lock file.\n\n\nSlides\nOpen the slides in a new tab here.\nDownload the slides as a new pdf here.\n\n\n\n\n\nExercise\n\nDownload the renv.lock file here.\n\n\nIf it downloads a file, navigate to your R project in your computer file system and replace the renv.lock file that’s already there with this new one.\nIf it opens in the web browser, copy all the text and paste over the renv.lock file that’s already in your R project.\n\n\nIn your R project, run renv::restore().\nInstall a new R package of your choice. (Not sure what to choose? Try one of these fun packages. For example, I did install.packages(\"hadley/emo\").)\nCreate an R script and save it in your R project. Include some code that requires the package. For example:\n\n\nemo::ji(\"banana\")\n\n\nRun renv::status() to make sure your project picked up the package as a dependency.\nRun renv::snapshot() to record that package in your lockfile.\nOpen your lockfile and look for your new package. For example, mine now has:\n\n\"emo\": {\n      \"Package\": \"emo\",\n      \"Version\": \"0.0.0.9000\",\n      \"Source\": \"git\",\n      \"RemoteType\": \"git\",\n      \"RemoteUrl\": \"https://github.com/hadley/emo\",\n      \"RemoteHost\": \"api.github.com\",\n      \"RemoteUsername\": \"hadley\",\n      \"RemoteRepo\": \"emo\",\n      \"RemoteRef\": \"master\",\n      \"RemoteSha\": \"3f03b11491ce3d6fc5601e210927eff73bf8e350\",\n      \"Requirements\": [\n        \"R\",\n        \"assertthat\",\n        \"crayon\",\n        \"glue\",\n        \"lubridate\",\n        \"magrittr\",\n        \"purrr\",\n        \"rlang\",\n        \"stringr\",\n        \"utils\"\n      ],\n      \"Hash\": \"eb32b8f0bb50621ad498f5d836b546a4\"\n    },\n\n\nResources\n\n{renv} documentation"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "DEPARTMENT: Epidemiology\nCOURSE NUMBER: EPI 590R\nCREDIT HOURS: 1\nSEMESTER: Fall 2023 (Preterm)\nCOURSE TITLE: R Bootcamp\nCLASS HOURS AND LOCATION: August 14 & 15, 9am-12:30pm & 1:30pm-5pm\nINSTRUCTOR NAME: Louisa Smith\nINSTRUCTOR EMAIL: l.smith@northeastern.edu"
+  },
+  {
+    "objectID": "about.html#concentration-competencies",
+    "href": "about.html#concentration-competencies",
+    "title": "Syllabus",
+    "section": "CONCENTRATION COMPETENCIES",
+    "text": "CONCENTRATION COMPETENCIES\n\nUtilize statistical software to conduct epidemiological analysis."
+  },
+  {
+    "objectID": "about.html#course-learning-objectives",
+    "href": "about.html#course-learning-objectives",
+    "title": "Syllabus",
+    "section": "COURSE LEARNING OBJECTIVES",
+    "text": "COURSE LEARNING OBJECTIVES\n\nBy the end of Lecture 1, students will be able to identify the benefits of a reproducible workflow for conducting analyses in R and specify the drawbacks of their current workflows.\nBy the end of Lecture 2, students will be able to create and open an R Project and navigate the filesystem within that project using the here package.\nBy the end of Lecture 3, students will be able to create a repository for their R project on GitHub and commit changes.\nBy the end of Lecture 4, students will be able to initiate a package environment using renv and describe how it works to ensure package consistency.\nBy the end of Lecture 5, students will be able to create a table of descriptive statistics and a table for regression model output and extract values from the tables.\nBy the end of Lecture 6, students will be able to render a quarto document as a Word or html file and identify when to use various chunk options.\nBy the end of Lecture 7, students will be able to wrap aspects of their analysis within functions.\nBy the end of Lecture 8, students will be able to initiate a targets workflow and create appropriate targets using their analysis functions.\n\n\nNote: Lecture numbers and their order are subject to change."
+  },
+  {
+    "objectID": "about.html#evaluation",
+    "href": "about.html#evaluation",
+    "title": "Syllabus",
+    "section": "EVALUATION",
+    "text": "EVALUATION\n\n\n\nBasis of Course Grade\n\n\n\n\n\nIn-class activities\n30%\n\n\nParticipation\n30%\n\n\nFinal project\n40%\n\n\n\n\n\n\nFinal grade point cutoffs\n\n\n\n\n\nS\n[75, 100)\n\n\nU\n[0, 75)"
+  },
+  {
+    "objectID": "about.html#course-structure",
+    "href": "about.html#course-structure",
+    "title": "Syllabus",
+    "section": "COURSE STRUCTURE",
+    "text": "COURSE STRUCTURE\nPre-work: Students are expected to come prepared with R, RStudio, git, and the relevant R packages installed on a laptop. Students should also create accounts on Github. Instructions for doing so and a brief activity to confirm installation will be communicated prior to the course, and I will be available via email to troubleshoot installation problems.\nIn-class activities: The bulk of the course content will be covered over the course of two daylong sessions consisting of lectures interspersed with individual and group work.\nParticipation: In-class participation consists not only of volunteering answers and/or asking questions during lectures, but also interacting with peers in small-group sessions. Small-group work will give you the opportunity to ask and answer questions with classmates. Participation includes showing a classmate how to solve a problem (not just doing it for them), asking a classmate or me for help and describing the initial steps to solve the problem, and sharing solutions with the whole class.\nFinal project: The final project will provide an opportunity to bring together the skills you have learned in class and will be due after the course (tentative due date August 29). The project will consist of a reproducible, real-world epidemiologic analysis. The goal of the analysis will be the process and workflow rather than the scientific process or conclusions. The final project will be submitted via GitHub.\n\n\n\n\n\n\n\n\nMPH/MSPH Concentration Competency\nRepresentative Assessment\n\n\n\n\n\nUtilize statistical software to conduct epidemiological analysis.\nFinal project"
+  },
+  {
+    "objectID": "about.html#required-andor-recommended-texts",
+    "href": "about.html#required-andor-recommended-texts",
+    "title": "Syllabus",
+    "section": "Required and/or recommended texts",
+    "text": "Required and/or recommended texts\nRecommended readings will consist mainly of package documentation and blog posts. Links to these freely available texts are included in the course calendar; more resources may be provided with the course materials."
+  },
+  {
+    "objectID": "about.html#attendance",
+    "href": "about.html#attendance",
+    "title": "Syllabus",
+    "section": "Attendance",
+    "text": "Attendance\nBecause there are only two in-person class sessions, these are integral and mandatory parts of the course. Attendance and preparation are required. If you are unable to attend a class session due to illness or emergency, contact the instructor as soon as possible to plan to make up the missed work."
+  },
+  {
+    "objectID": "about.html#course-participation",
+    "href": "about.html#course-participation",
+    "title": "Syllabus",
+    "section": "Course Participation",
+    "text": "Course Participation\nThe success of the course relies on active in-class student participation and preparation. You are expected to prepare by completing the required activities before the first class. In-class participation consists not only of volunteering answers and/or asking questions during lectures, but also interacting with peers in small-group sessions. Small-group work will give you the opportunity to ask and answer questions with classmates. Participation includes showing a classmate how to solve a problem (not just doing it for them), asking a classmate or teacher for help and describing the initial steps to solve the problem, and sharing solutions with the whole class."
+  },
+  {
+    "objectID": "about.html#assignment-submission",
+    "href": "about.html#assignment-submission",
+    "title": "Syllabus",
+    "section": "Assignment Submission",
+    "text": "Assignment Submission\nIn-class activities and the final project will be submitted via GitHub. Instructions will be provided in class."
+  },
+  {
+    "objectID": "about.html#communication",
+    "href": "about.html#communication",
+    "title": "Syllabus",
+    "section": "Communication",
+    "text": "Communication\nPrior to the course, the instructor can be contacted via email. After the course begins, the instructor can be contacted via email for questions specific to a student, and discussions and questions that may affect the whole class will take place on GitHub.\nIf your situation changes regarding health, housing, or in any other regard with respect to your ability to participate in the class, please avail yourself to any relevant Emory student support organizations and notify me as soon as feasible. It is much easier for me to address your needs if I know about them as soon as they arise. While I may not be able to successfully respond to every request, I emphasize that my goal is to treat you all equitably and do what I can to help you succeed in this course."
+  },
+  {
+    "objectID": "about.html#diversity-and-inclusion",
+    "href": "about.html#diversity-and-inclusion",
+    "title": "Syllabus",
+    "section": "Diversity and Inclusion",
+    "text": "Diversity and Inclusion\nIn this course, we value the diverse perspectives, experiences, and backgrounds of all students. Our goal is for all students to be able to participate fully and have their learning supported both in and out of class. Therefore, we will work to foster an environment in which each student is able to hear and respect one another. Working as a team is not always easy and sometimes involves difficult conversations. We will approach these conversations with empathy and the openness to deepen our understanding of multiple perspectives. We are here to support you and your colleagues throughout the course. Please let us know of ways to improve the course and best support your learning.\nIf you experience barriers to learning in this course, please do not hesitate to discuss them with me and the Office of Diversity, Equity, and Inclusion."
+  },
+  {
+    "objectID": "about.html#accessibility-and-accommodations",
+    "href": "about.html#accessibility-and-accommodations",
+    "title": "Syllabus",
+    "section": "Accessibility and Accommodations",
+    "text": "Accessibility and Accommodations\nAccessibility Services works with students who have disabilities to provide reasonable accommodations. In order to receive consideration for reasonable accommodations, you must contact the Office of Accessibility Services (OAS). It is the responsibility of the student to register with OAS. Please note that accommodations are not retroactive and that disability accommodations are not provided until an accommodation letter has been processed.\nStudents who registered with OAS and have a letter outlining their academic accommodations are strongly encouraged to coordinate a meeting time with me to discuss a protocol to implement the accommodations as needed throughout the semester. This meeting should occur as early in the semester as possible.\nContact Accessibility Services for more information at (404) 727-9877 or accessibility@emory.edu. Additional information is available at the OAS website at http://equityandinclusion.emory.edu/access/students/index.html"
+  },
+  {
+    "objectID": "about.html#honor-code",
+    "href": "about.html#honor-code",
+    "title": "Syllabus",
+    "section": "Honor Code",
+    "text": "Honor Code\nYou are bound by Emory University’s Student Honor and Conduct Code. RSPH requires that all material submitted by a student fulfilling his or her academic course of study must be the original work of the student. Violations of academic honor include any action by a student indicating dishonesty or a lack of integrity in academic ethics. Academic dishonesty refers to cheating, plagiarizing, assisting other students without authorization, lying, tampering, or stealing in performing any academic work, and will not be tolerated under any circumstances.\nThe RSPH Honor Code states: “Plagiarism is the act of presenting as one’s own work the expression, words, or ideas of another person whether published or unpublished (including the work of another student). A writer’s work should be regarded as his/her own property.” (http://www.sph.emory.edu/cms/current_students/enrollment_services/honor_code.html)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EPI 590R",
+    "section": "",
+    "text": "August 14-15, 2023\n\n9 am - 5 pm\n\n\n\nLouisa Smith\nAssistant Professor\nDepartment of Health Sciences, Northeastern University\nl.smith@northeastern.edu"
+  },
+  {
+    "objectID": "day-2/01-gtsummary.html",
+    "href": "day-2/01-gtsummary.html",
+    "title": "Descriptive and regression tables with {gtsummary}",
+    "section": "",
+    "text": "Overview\n{gtsummary} has become my preferred way of creating tables of all types. It’s highly customizable and can almost always get the exact output I’m looking for. It’s based of the {gt} package for creating tables, so can be even more customizable. It also includes functions for pulling out numbers from the tables to report in the text.\n\n\nSlides\nOpen the slides in a new tab here.\nDownload the slides as a new pdf here.\n\n\n\n\n\nExercises\n\nDownload the quarto document here and put it into your R project folder.\nRender the document.\nMake a tbl_summary(). Include (at least) number of hours of sleep on weekdays and weekends, categorical region, and income and make sure they are nicely labeled. Play around with the extra functions from the examples and/or from the documentation\nFit a Poisson regression for the number of siblings, using at least 3 predictors of your choice. Create a nice table displaying your Poisson regression and its exponentiated coefficients.\n\n\n\nResources\n\n{gtsummary} documentation\n{gt} documentation\n{flextable} documentation\n{gtExtras} documentation\nDiscussion here and here about table rendering issues that will be fixed in the next quarto update."
+  },
+  {
+    "objectID": "day-2/03-targets.html",
+    "href": "day-2/03-targets.html",
+    "title": "targets",
+    "section": "",
+    "text": "Overview\nThe {targets} R package offers a superior workflow compared to a script-based approach, addressing several common challenges:\n\nManaging a sequence of computational steps : {targets} allows you to define a pipeline of computational steps, specifying the dependencies and relationships between them.\nSelective updates : With {targets}, you only need to update the specific steps affected by a change. It intelligently determines which steps are affected and updates them accordingly, saving time and computational resources.\nEnsuring validity of results : {targets} automatically tracks the relationships between steps and ensures that the results at the end of the pipeline remain valid, even if intermediate steps change.\n\nKey advantages of the {targets} workflow over script-based approaches include:\n\nReproducibility : By explicitly defining dependencies, {targets} ensures that changes in one step trigger the re-evaluation of dependent steps, maintaining reproducibility.\nEfficiency : Instead of rerunning all scripts, {targets} selectively executes only the affected steps, optimizing computational efficiency.\nScalability : {targets} provides a clear overview of dependencies, making it easier to manage and scale complex workflows with numerous scripts.\nSimplified file management : {targets} automatically manages input and output files, removing the burden of manually tracking file dependencies and their locations.\n\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nDownload a new R project as a zip file (green “Code” button -&gt; “Download ZIP”). (If you are familiar with git/github, feel free to clone it directly.)\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made earlier into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun `tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+  },
+  {
+    "objectID": "day-2/02-function.html",
+    "href": "day-2/02-function.html",
+    "title": "Introduction to {targets}",
+    "section": "",
+    "text": "Overview\nThe {targets} R package offers a superior workflow compared to a script-based approach, addressing several common challenges:\n\nManaging a sequence of computational steps : {targets} allows you to define a pipeline of computational steps, specifying the dependencies and relationships between them.\nSelective updates : With {targets}, you only need to update the specific steps affected by a change. It intelligently determines which steps are affected and updates them accordingly, saving time and computational resources.\nEnsuring validity of results : {targets} automatically tracks the relationships between steps and ensures that the results at the end of the pipeline remain valid, even if intermediate steps change.\n\nKey advantages of the {targets} workflow over script-based approaches include:\n\nReproducibility : By explicitly defining dependencies, {targets} ensures that changes in one step trigger the re-evaluation of dependent steps, maintaining reproducibility.\nEfficiency : Instead of rerunning all scripts, {targets} selectively executes only the affected steps, optimizing computational efficiency.\nScalability : {targets} provides a clear overview of dependencies, making it easier to manage and scale complex workflows with numerous scripts.\nSimplified file management : {targets} automatically manages input and output files, removing the burden of manually tracking file dependencies and their locations.\n\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nDownload a new R project as a zip file (green “Code” button -&gt; “Download ZIP”). (If you are familiar with git/github, feel free to clone it directly.)\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made earlier into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun `tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+  },
+  {
+    "objectID": "day-1/05-quarto.html",
+    "href": "day-1/05-quarto.html",
+    "title": "Reports and manuscripts with Quarto",
+    "section": "",
+    "text": "Overview\nQuarto is an open-source document format and computational notebook system that combines the power of Markdown, code execution, and reproducible research. It allows users to seamlessly integrate code, text, and visualizations within a single document, fostering a dynamic and interactive narrative. Quarto supports multiple programming languages, including R, Python, Julia, and JavaScript, enabling cross-language interoperability. With its intuitive syntax, Quarto makes it easy to create professional-quality reports, presentations, and articles, where code chunks can be executed on-demand and their outputs automatically updated.\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nIn your R project, create a quarto document. Choose html output for now.\nRender the document using the Render button at the top of the RStudio pane.\nChange to format: docx in the header and re-render.\nChange back to format: html (I find easier to work on this way, can render to Word at the end).\nCreate a code chunk with the following code and render:\n\n\nnlsy &lt;- read.csv(here::here(\"data\", \"nlsy.csv\"))\nhead(nlsy)\n\n\n\nResources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+  }
+]

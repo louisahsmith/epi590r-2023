@@ -1,0 +1,55 @@
+project:
+  type: website
+  execute-dir: project
+  post-render: 
+    - create-pdfs.R
+
+execute:
+  freeze: auto
+  eval: false
+  echo: true
+website:
+  title: EPI 590R
+  page-navigation: true
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Syllabus"
+        file: about.qmd
+      - text: "Course content"
+        file: day-1/01-workflow.qmd
+    right:
+      - text: "Resources"
+        file: resources.qmd
+      - icon: github
+        href: https://www.github.com
+  sidebar: 
+    contents: 
+      - about.qmd
+      - auto: day-1
+      - auto: day-2
+      - resources.qmd
+
+format:
+  html:
+    theme: [journal, www/custom.scss]
+    css: www/styles.css
+    toc: true
+  revealjs:
+    self-contained: true
+    slide-number: c/t
+    preview-links: auto
+    hash-type: number
+    hash-one-based-index: true
+    # pdf-max-pages-per-slide: 1
+    theme: 
+      - www/custom.scss
+    pointer:
+      color: 'red'
+      pointerSize: 16
+revealjs-plugins:
+  - pointer
+format-links: false
+highlight-style: nord
+editor: source

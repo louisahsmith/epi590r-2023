@@ -1,0 +1,40 @@
+---
+title: "Reports and manuscripts with Quarto"
+execute: 
+  eval: false
+---
+
+# Overview
+
+Quarto is an open-source document format and computational notebook system that combines the power of Markdown, code execution, and reproducible research. It allows users to seamlessly integrate code, text, and visualizations within a single document, fostering a dynamic and interactive narrative. Quarto supports multiple programming languages, including R, Python, Julia, and JavaScript, enabling cross-language interoperability. With its intuitive syntax, Quarto makes it easy to create professional-quality reports, presentations, and articles, where code chunks can be executed on-demand and their outputs automatically updated.
+
+# Slides
+Open the slides in a new tab [here](../slides/quarto.html){target="_blank"}.
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="../slides/quarto.html"></iframe>
+```
+</div>
+
+# Exercises
+
+1. In your R project, create a quarto document. Choose html output for now.
+2. Render the document using the Render button at the top of the RStudio pane.
+3. Change to `format: docx` in the header and re-render.
+4. Change back to `format: html` (I find easier to work on this way, can render to Word at the end).
+5. Create a code chunk with the following code and render:
+```{r}
+nlsy <- read.csv(here::here("data", "nlsy.csv"))
+head(nlsy)
+```
+
+# Resources
+
+- The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
+- Feel free to look at the [source code](https://github.com/louisahsmith/reproducible-epi-workshop) of this site
+
+Additional resources for R Markdown will have a lot of overlap:
+
+-   [The Definitive Guide to R Markdown](https://bookdown.org/yihui/rmarkdown/)
+-   [The R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)

@@ -1,0 +1,227 @@
+---
+title: "{gtsummary}"
+format: revealjs
+---
+
+## What is `{gtsummary}`?
+
+-   Create tables that are publication-ready
+-   Highly customizable
+-   Descriptive tables, regression tables, etc.
+
+::: center
+![](https://github.com/ddsjoberg/gtsummary/raw/main/man/figures/logo.png){height="300px"}
+:::
+
+## `gtsummary::tbl_summary()`
+
+::: {style="height: 0px;"}
+{{< include ../www/_scss.qmd >}}
+:::
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+nlsy_cols <- c("glasses", "eyesight", "sleep_wkdy", "sleep_wknd", 
+               "id", "nsibs", "samp", "race_eth", "sex", "region", 
+               "income", "res_1980", "res_2002", "age_bir")
+nlsy <- read_csv(here::here("data", "nlsy.csv"), 
+                 na = c("-1", "-2", "-3", "-4", "-5", "-998"),
+                 skip = 1, col_names = nlsy_cols) |> 
+  mutate(region_cat = factor(region, labels = c("Northeast", "North Central", "South", "West")),
+         sex_cat = factor(sex, labels = c("Male", "Female")),
+         race_eth_cat = factor(race_eth, labels = c("Hispanic", "Black", "Non-Black, Non-Hispanic")),
+         eyesight_cat = factor(eyesight, labels = c("Excellent", "Very good", "Good", "Fair", "Poor"))) 
+```
+
+```{r}
+#| output-location: column
+library(gtsummary)
+
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir))
+```
+
+##  {.smaller}
+
+```{r}
+#| output-location: column
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir),
+  label = list(
+    race_eth_cat ~ "Race/ethnicity",
+    region_cat ~ "Region",
+    eyesight_cat ~ "Eyesight",
+    glasses ~ "Wears glasses",
+    age_bir ~ "Age at first birth"
+  ),
+  missing_text = "Missing")
+```
+
+##  {.smaller}
+
+```{r}
+#| output-location: column
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat,
+              eyesight_cat, glasses, age_bir),
+  label = list(
+    race_eth_cat ~ "Race/ethnicity",
+    eyesight_cat ~ "Eyesight",
+    glasses ~ "Wears glasses",
+    age_bir ~ "Age at first birth"
+  ),
+  missing_text = "Missing") |> 
+  add_p(test = list(all_continuous() ~ "t.test", 
+                    all_categorical() ~ "chisq.test")) |> 
+  add_overall(col_label = "**Total**") |> 
+  bold_labels() |> 
+  modify_footnote(update = everything() ~ NA) |> 
+  modify_header(label = "**Variable**", p.value = "**P**")
+```
+
+## `tbl_summary()`
+
+-   Incredibly customizeable
+-   Really helpful with Table 1
+-   I often just view in the web browser and copy and paste into a Word document
+-   Can also be used within quarto/R Markdown[^1]
+-   If output is Word, I use `as_flex_table()`
+-   Make even more customizeable with `as_gt()`
+    -   Then can output to Word with `gt::as_word()`
+
+[^1]: This is where the bug comes in; soon to be fixed!
+
+## Univariate regressions
+
+Fit a series of univariate regressions of income on other variables.
+
+```{r}
+#| output-location: column
+tbl_uvregression(
+  nlsy, 
+  y = income,
+  include = c(sex_cat, race_eth_cat,
+              eyesight_cat, income, age_bir),
+  method = lm)
+```
+
+## Can also do logistic regression
+
+```{r}
+#| output-location: column
+tbl_uvregression(
+  nlsy, 
+  y = glasses,
+  include = c(sex_cat, race_eth_cat,
+              eyesight_cat, glasses, age_bir),
+  method = glm,
+  method.args = list(family = binomial()),
+  exponentiate = TRUE)
+```
+
+Customizable just like `tbl_summary()`
+
+## Some regressions
+
+```{r}
+linear_model <- lm(income ~ sex_cat + age_bir + race_eth_cat, 
+                   data = nlsy)
+```
+
+```{r}
+linear_model_int <- lm(income ~ sex_cat*age_bir + race_eth_cat, 
+                   data = nlsy)
+```
+
+```{r}
+logistic_model <- glm(glasses ~ eyesight_cat + sex_cat + income, 
+                      data = nlsy, family = binomial())
+```
+
+## `gtsummary::tbl_regression()` {.smaller}
+
+```{r}
+#| output-location: column
+tbl_regression(
+  linear_model, 
+  intercept = TRUE,
+  label = list(
+    sex_cat ~ "Sex",
+    race_eth_cat ~ "Race/ethnicity",
+    age_bir ~ "Age at first birth"
+  ))
+```
+
+```{r}
+#| output-location: column
+tbl_regression(
+  logistic_model, 
+  exponentiate = TRUE,
+  label = list(
+    sex_cat ~ "Sex",
+    eyesight_cat ~ "Eyesight",
+    income ~ "Income"
+  ))
+```
+
+## You could put several together
+
+```{r}
+tbl_no_int <- tbl_regression(
+  linear_model, 
+  intercept = TRUE,
+  label = list(
+    sex_cat ~ "Sex",
+    race_eth_cat ~ "Race/ethnicity",
+    age_bir ~ "Age at first birth"
+  ))
+
+tbl_int <- tbl_regression(
+  linear_model_int, 
+  intercept = TRUE,
+  label = list(
+    sex_cat ~ "Sex",
+    race_eth_cat ~ "Race/ethnicity",
+    age_bir ~ "Age at first birth",
+    `sex_cat:age_bir` ~ "Sex/age interaction"
+  ))
+```
+
+## You could put several together
+
+```{r}
+tbl_merge(list(tbl_no_int, tbl_int), 
+          tab_spanner = c("**Model 1**", "**Model 2**"))
+```
+
+## Inline text
+
+
+
+## bonus: `broom::tidy()`
+
+```{r}
+#| output-location: fragment
+bind_rows(
+  broom::tidy(linear_model, conf.int = TRUE),
+  broom::tidy(linear_model_int, conf.int = TRUE),
+  .id = "model"
+) |>
+  mutate(model = factor(model, 
+                        labels = c("main terms", "sex-age interaction"))) |> 
+  ggplot(aes(x = term, y = estimate, 
+             ymin = conf.low, ymax = conf.high,
+             color = model)) +
+  geom_point(position = position_dodge(width = .5)) +
+  geom_errorbar(position = position_dodge(width = .5))
+```

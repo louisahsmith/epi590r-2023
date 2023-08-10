@@ -1,0 +1,31 @@
+---
+title: "EPI 590R"
+sidebar: false
+format: 
+  html: 
+    toc: false
+about:
+  template: broadside
+image: img/lots-of-screens.png
+---
+
+
+:::: columns
+::: {.column width="50%"}
+### August 14-15, 2023 {style=margin-top:0;}
+#### 9 am - 5 pm
+
+
+:::
+
+::: {.column width="50%"}
+**Louisa Smith**
+
+Assistant Professor
+
+Department of Health Sciences, Northeastern University
+
+l.smith\@northeastern.edu
+:::
+
+::::

@@ -1,0 +1,35 @@
+---
+title: "R projects and file management"
+---
+
+# Overview
+
+Having a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the `{here}` package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The `{here}` package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with `setwd()`. Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.
+
+# Slides
+
+Open the slides in a new tab [here](../slides/projects.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="../slides/projects.html"></iframe>
+```
+
+</div>
+
+# Exercises
+
+1. Create an R project for this workshop (you do want to check off "Use renv" -- we'll get to that later)
+2. Install the `{here}` package
+3. Download the `.csv` file at <https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv>
+4. Create a `data` folder within your R project directory and move the `nlsy.csv` file there.
+5. Run `here::here("data", "nlsy.csv")` and see what file path prints out. Compare with your neighbor.
+6. Run `read.csv(here::here("data", "nlsy.csv"))` to make sure your can read in the file.
+7. Restart the R session to start fresh!
+
+# Resources
+
+- Jenny Bryan's blog post: [Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) 
+- Another [blog post](https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/) by Malcolm Barrett
+- [`{here}` package documentation:](https://here.r-lib.org/)
