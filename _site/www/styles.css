@@ -29,3 +29,18 @@ iframe.reveal-demo {
     margin-bottom: 0;
 }
 
+div.line-block {
+  margin-bottom: 1rem;
+}
+
+media (min-width: 992px)
+div.quarto-about-broadside .about-main .about-entity {
+    flex: 0 10 23%;
+    margin-right: 5em;
+}
+
+@media (max-width: 991.98px)
+div.quarto-about-broadside .about-main .about-entity {
+    height: 250px;
+    background-size: contain;
+}

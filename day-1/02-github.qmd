@@ -1,3 +1,60 @@
 ---
 title: "Introduction to Git and GitHub"
 ---
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/02-github.html"></iframe>
+```
+
+</div>
+
+Open the slides in a new tab [here](slides/02-github.qmd){target="_blank"}.
+
+## Exercise
+
+1.  *Fork* the repo at <https://github.com/louisahsmith/epi590r-in-class> by clicking "Fork" in the upper right.
+
+    ![](images/Screenshot%202023-08-10%20at%202.28.20%20PM.png)
+
+    On the next page, click "Create fork". Forking a repository creates a copy that belongs to you.[^1] This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don't have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a *pull request*).
+
+2.  On **your** fork of the repository, click the green "Code" button. We are going to *clone* the repository to your computer using *HTTPS*. HTTPS should already be underlined, but if, not, select it. Copy the URL (this should have your username, not mine!).
+
+    ![](images/Screenshot%202023-08-10%20at%202.39.15%20PM.png){width="418"}
+
+3.  Open up RStudio. Go to File \> New Project. Choose "Version Control" then "Git" on the next page.
+
+    ![](images/Screenshot%202023-08-10%20at%202.35.53%20PM.png){width="459"}
+
+4.  Paste the URL you copied earlier. You can name the project directory whatever you want, but I find it's easiest if it has the same name as the repo. Then choose where you want to store the project.[^2] You can browse the file system on your computer to do so. For me, this will create the folder `/Users/l.smith/Documents/Teaching/Emory/epi590r-in-class/` and everything in the repo will be downloaded to that folder. Write down this path somewhere if you can't remember it, so you can find it later!
+
+    You can select "Open in new session" if you have already been doing something in R and want to keep that other RStudio window open. Then "Create Project".
+
+    ![](images/Screenshot%202023-08-10%20at%202.38.35%20PM.png){width="500"}
+
+5.  From the filepane in RStudio, open `README.md`. Write your name in the file and save.
+
+6.  In your Git pane, you'll see that file pop up because it has been modified (M). When you click on the checkbox, you are *staging* the file.[^3] Then click "Commit".
+
+    ![](images/Screenshot%202023-08-10%20at%203.13.54%20PM.png){width="626"}
+
+7.  You'll see a *diff* of the changes you made to that file. If you don't like them, you can *revert*. Add a commit message to explain what changes you've made. Then "Commit", close the new window that opens, and then "Push".[^4]
+
+    ![](images/Screenshot%202023-08-10%20at%203.15.05%20PM.png){width="649"}
+
+8.  Go back to your web browser to check your repo! What do you notice?
+
+[^1]: The owner will see that you've forked it, and you can't make your copy private.
+
+[^2]: It's recommended that this is *not* a Dropbox, OneDrive, iCloud, etc. drive, because synced folders can occasionally create conflicts with git. The idea is that since you are regularly committing to GitHub, you are backing up your files there anyway. However, since I like to keep all my files together, I keep git repos on a synced drive. There are occasional problems but it's worth it to me for the improved organization and another layer of backup.
+
+[^3]: This is equivalent to running `git add README.md` on the command line.
+
+[^4]: On the command line, this would be:\
+    `git commit -m "add my name to readme"git push`
+
+## Resources
+
+-   [Happy Git With R](https://happygitwithr.com/) section 12

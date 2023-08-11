@@ -1,8 +1,8 @@
 project:
   type: website
   execute-dir: project
-  post-render: 
-    - create-pdfs.R
+  # post-render: 
+  #   - create-pdfs.R
 
 execute:
   freeze: auto
@@ -18,7 +18,7 @@ website:
       - text: "Syllabus"
         file: about.qmd
       - text: "Course content"
-        file: day-1/01-workflow.qmd
+        file: day-1/01-intro.qmd
     right:
       - text: "Resources"
         file: resources.qmd
