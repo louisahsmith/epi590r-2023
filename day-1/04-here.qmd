@@ -1,0 +1,38 @@
+---
+title: "`{here}` package"
+---
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/04-here.html"></iframe>
+```
+
+</div>
+
+Open the slides in a new tab [here](slides/04-here.qmd){target="_blank"}.
+
+## Exercises
+
+1.  Install the `{here}` package:
+
+    | `install.packages("here")`
+
+2.  In the console, run:
+
+    | `here::here()` to print your project directory
+    | `getwd()` to print your working directory
+
+    What do you notice?
+
+3.  In the console, run:
+
+    | `setwd("data")` to set your working directory
+
+    Then run the same lines as above. What do you notice?
+
+4.  Download the `.R` script [here](https://github.com/louisahsmith/epi590r-in-class/blob/db030e9d10e6deb5658a4dddf52542bbc4b0a488/R/clean-data-good.R) and use your file browser to put it in the R folder in your project. Open the script and run through the code line-by-line. Compare it with the code from the last section.
+
+## Resources
+
+-   [`{here}` package documentation](https://here.r-lib.org/)

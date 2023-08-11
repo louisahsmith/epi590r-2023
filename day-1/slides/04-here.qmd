@@ -1,0 +1,6 @@
+---
+title: "The `{here}` package"
+subtitle: "or, How to keep your computer safe from fire"
+format: revealjs
+---
+

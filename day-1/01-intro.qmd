@@ -1,0 +1,47 @@
+---
+title: "Introduction to the course"
+---
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/01-intro.html"></iframe>
+```
+
+</div>
+
+Open the slides in a new tab [here](slides/01-intro.qmd){target="_blank"}.
+
+## Exercise
+
+1.  Install the `{usethis}` package:
+
+    | `install.packages("usethis")`
+
+2.  Introduce yourself to git:
+
+    | `use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")`
+
+3.  Create a github token:
+
+    | `usethis::create_github_token()`
+
+    This will open up your browser. Describe where the token will be used and choose an expiration date. Should you choose "No expiration"? Do as Github says, not as I do.[^1] You don't need to change any of the other options. Click "Generate token".
+
+    ![](images/Screenshot%202023-08-10%20at%202.04.05%20PM.png){width="506"}
+
+4.  Copy the token. (I deleted the one in this screenshot immediately, but you shouldn't share with anyone or save it anywhere but a password manager -- treat it like a password.)
+
+    ![](images/Screenshot%202023-08-10%20at%202.07.21%20PM.png){width="612"}
+
+5.  Back in R, run this code and paste your token where it says "Enter password":
+
+    | `gitcreds::gitcreds_set()`
+
+    You're all set! Come back to these instructions and repeat whenever your token expires or are using a different device.
+
+[^1]: You can always delete a token if, say, you lose your laptop or it gets compromised.
+
+## Resources
+
+-   [Happy Git With R](https://happygitwithr.com/) section 7 & 9

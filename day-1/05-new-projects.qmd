@@ -1,0 +1,75 @@
+---
+title: "Starting from scratch"
+---
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/05-new-projects.html"></iframe>
+```
+
+</div>
+
+Open the slides in a new tab [here](slides/05-new-projects.qmd){target="_blank"}.
+
+## Exercises
+
+1.  Create a new project either from File \> New Project or using the drop-down menu in the upper-right corner of RStudio. This time, choose "New Directory" and then "New Project".
+
+    ![](images/Screenshot%202023-08-10%20at%206.51.31%20PM.png){width="400"}
+
+2.  Choose a name for your new project and where to store it. Check "Create a git repository." You can leave "Use renv with this project" unchecked (for now!).
+
+    ![](images/Screenshot%202023-08-10%20at%206.53.20%20PM.png)
+
+3.  Look at the git pane. What do you notice compared to [the first time](day-1/02-github.qmd#Exercises) we looked at this pane? Stage and commit the files (I usually use "initial commit" as my first commit message since I haven't don't anything yet!). You'll notice the "Push" button is grayed out -- we'll have to fix that!
+
+    ![](images/Screenshot%202023-08-10%20at%207.11.51%20PM.png)
+
+4.  Open up your web browser to GitHub. There are a few different ways to make a new repository; click one of them.
+
+    ::: panel-tabset
+    ## From github.com
+
+    ![](images/Screenshot%202023-08-10%20at%207.17.03%20PM.png){width="500"}
+
+    ## From github.com/username
+
+    ![](images/Screenshot%202023-08-10%20at%207.16.39%20PM.png){width="589"}
+    :::
+
+5.  Choose a name (preferably one that matches the name you gave your R project). You can also add a description and choose to make it private, if you wish. (If private, you'll have to invite the teaching team as collaborators so we can grade it!) You don't need to click anything else.
+
+    ![](images/Screenshot%202023-08-10%20at%207.20.56%20PM.png)
+
+6.  GitHub is going to give you some options for code. You're going to use the second option: "push an existing repository from the command line" because you've already initialized the repo in RStudio. You are going to run this code in the *terminal.* You'll find that in a tab next to the console.
+
+![](images/Screenshot%202023-08-10%20at%207.32.12%20PM.png)
+
+7.  Even though it looks like you can copy and paste the 3 lines of code at once, you can't! You'll get the error you see above (I do this every time). Instead, copy and paste and run them one at a time. Then refresh your GitHub page!
+
+8.  Create a new file called `secret.txt` (you can do this via File \> New File \> Text file, then save the file). Write down your deepest, darkest secrets in there.
+
+    Uh oh! It shows up in the git pane. You don't want to accidentally commit this to your repo!
+
+9.  Open `.gitignore` via the RStudio filepane.[^1] Add "secrets.txt" below the files that RStudio helpfully ignored for you. Then save. What happened in the git pane?
+
+    ![](images/Screenshot%202023-08-10%20at%207.43.00%20PM.png){width="441"}
+
+    Whenever you have something that shouldn't be shared with the world, like a password or a dataset, you should add it to the `.gitignore`. There are a lot of examples [here](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns) of how you can match folders and file patterns.
+
+10. Set up your folders how you'd like in your repo. For example, along with an `R` folder and a `data` folder, I like to have a `documents` folder. Find some data online, download it, and store it in your `data` folder. Commit and push to GitHub!
+
+    Some fun options for data are:
+
+    -   <https://data.fivethirtyeight.com/>
+    -   <https://github.com/rfordatascience/tidytuesday#datasets>
+    -   <https://github.com/higgi13425/medicaldata/tree/master/data> (descriptions: <https://higgi13425.github.io/medicaldata/#list-of-datasets>)
+
+[^1]: This file probably doesn't show up in your computer file browser, which hides "dot-files", or files that start with a period -- they are usually for configuration. They're just text files, though!
+
+## Resources
+
+-   This is a slightly simpler (I think) version of the [Existing project, GitHub last](https://happygitwithr.com/existing-github-last) workflow
+-   [.gitignore patterns](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns)
+-   [.gitignore documentation](https://git-scm.com/docs/gitignore)
