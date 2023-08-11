@@ -207,20 +207,6 @@
     "href": "day-1/03-projects.html",
     "title": "R projects and file management",
     "section": "",
-    "text": "Open the slides in a new tab here."
-  },
-  {
-    "objectID": "day-1/03-projects.html#exercises",
-    "href": "day-1/03-projects.html#exercises",
-    "title": "R projects and file management",
-    "section": "Exercises",
-    "text": "Exercises\n\nDownload the .R script here and the .csv file here.\nIn your computer file browser, find your epi590r-in-class repo and create an R folder and a data folder. Within the data folder add a raw folder and a clean folder. Put the .csv file in the data/raw folder and the script in R folder. Your file structure should look like this:\n├── epi590r-in-class.Rproj\n├── README.md\n├── R/\n│   ├── clean-data-bad.R\n├── data/\n│   ├── raw/\n│   │   ├── nlsy.csv\n│   ├── clean/\nReturn to RStudio. Look to the filepane to confirm the files are there.\nLook at your Git pane. What do you notice? Stage, commit, and push the changes you’ve made.\nTry to run the code, line-by-line, in clean-data-bad.R. What do you notice?\nGo to Tools &gt; Global Options and under General, change your settings so that they match these:\nClose RStudio. Open it up again by opening the epi590r-2023.Rproj file in your file browser. You should have a clean environment!\n\nMacWindows"
-  },
-  {
-    "objectID": "day-1/03-projects.html#resources",
-    "href": "day-1/03-projects.html#resources",
-    "title": "R projects and file management",
-    "section": "Resources",
-    "text": "Resources\n\nJenny Bryan’s blog post: Project-oriented workflow\nAnother blog post by Malcolm Barrett"
+    "text": "Overview\nHaving a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the {here} package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The {here} package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with setwd(). Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nCreate an R project for this workshop (you do want to check off “Use renv” – we’ll get to that later)\nInstall the {here} package\nDownload the .csv file at https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv\nCreate a data folder within your R project directory and move the nlsy.csv file there.\nRun here::here(\"data\", \"nlsy.csv\") and see what file path prints out. Compare with your neighbor.\nRun read.csv(here::here(\"data\", \"nlsy.csv\")) to make sure your can read in the file.\nRestart the R session to start fresh!\n\n\n\nResources\n\nJenny Bryan’s blog post: Project-oriented workflow\nAnother blog post by Malcolm Barrett\n{here} package documentation:"
   }
 ]

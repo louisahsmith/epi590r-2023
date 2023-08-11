@@ -30,11 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<<<<<<< HEAD
 <link href="../day-1/04-here.html" rel="next">
 <link href="../day-1/02-github.html" rel="prev">
-=======
->>>>>>> main
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../www/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -92,7 +89,6 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-<<<<<<< HEAD
     <a class="nav-link active" href="../about.html" aria-current="page"><span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
@@ -107,9 +103,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://www.github.com" <i="" role="img">
  
 &gt;<span class="menu-text"></span></a>
-=======
-    <a class="nav-link" href="../about.html"><span class="menu-text">Syllabus</span></a>
->>>>>>> main
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -117,7 +110,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-<<<<<<< HEAD
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -128,13 +120,10 @@ ul.task-list li input[type="checkbox"] {
         </a>
     </div>
   </nav>
-=======
->>>>>>> main
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<<<<<<< HEAD
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
@@ -248,15 +237,15 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
-=======
->>>>>>> main
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
@@ -264,11 +253,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<<<<<<< HEAD
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../day-1/01-intro.html">Day 1</a></li><li class="breadcrumb-item"><a href="../day-1/03-projects.html">R projects and file management</a></li></ol></nav>
-=======
-<header id="title-block-header" class="quarto-title-block default">
->>>>>>> main
 <div class="quarto-title">
 <h1 class="title">R projects and file management</h1>
 </div>
@@ -286,46 +271,35 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Having a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the <code>{here}</code> package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The <code>{here}</code> package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with <code>setwd()</code>. Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.</p>
+</section>
+<section id="slides" class="level1">
+<h1>Slides</h1>
+<p>Open the slides in a new tab <a href="../slides/projects.qmd" target="_blank">here</a>.</p>
 <div>
-<iframe class="slide-deck" src="slides/03-projects.html"></iframe>
+<iframe class="slide-deck" src="../slides/projects.html"></iframe>
 </div>
-<p>Open the slides in a new tab <a href="../day-1/slides/03-projects.html" target="_blank">here</a>.</p>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
 <ol type="1">
-<li><p>Download the <code>.R</code> script <a href="https://github.com/louisahsmith/epi590r-in-class/blob/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/R/clean-data-bad.R">here</a> and the <code>.csv</code> file <a href="https://github.com/louisahsmith/epi590r-in-class/blob/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/data/raw/nlsy.csv">here</a>.</p></li>
-<li><p>In your computer file browser, find your <code>epi590r-in-class</code> repo and create an <code>R</code> folder and a <code>data</code> folder. Within the <code>data</code> folder add a <code>raw</code> folder and a <code>clean</code> folder. Put the <code>.csv</code> file in the <code>data/raw</code> folder and the script in <code>R</code> folder. Your file structure should look like this:</p>
-<pre><code>├── epi590r-in-class.Rproj
-├── README.md
-├── R/
-│   ├── clean-data-bad.R
-├── data/
-│   ├── raw/
-│   │   ├── nlsy.csv
-│   ├── clean/</code></pre></li>
-<li><p>Return to RStudio. Look to the filepane to confirm the files are there.</p></li>
-<li><p>Look at your Git pane. What do you notice? Stage, commit, and push the changes you’ve made.</p></li>
-<li><p>Try to run the code, line-by-line, in <code>clean-data-bad.R</code>. What do you notice?</p></li>
-<li><p>Go to Tools &gt; Global Options and under General, change your settings so that they match these:<img src="images/Screenshot 2023-08-10 at 5.14.32 PM.png" class="img-fluid" width="315"></p></li>
-<li><p>Close RStudio. Open it up again by opening the <code>epi590r-2023.Rproj</code> file in your file browser. You should have a clean environment!</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><img src="images/Screenshot 2023-08-10 at 6.22.10 PM.png" class="img-fluid" width="500"></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><img src="images/Screenshot 2023-08-10 at 6.28.46 PM.png" class="img-fluid" width="500"></p>
-</div>
-</div>
-</div></li>
+<li>Create an R project for this workshop (you do want to check off “Use renv” – we’ll get to that later)</li>
+<li>Install the <code>{here}</code> package</li>
+<li>Download the <code>.csv</code> file at <a href="https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv" class="uri">https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv</a></li>
+<li>Create a <code>data</code> folder within your R project directory and move the <code>nlsy.csv</code> file there.</li>
+<li>Run <code>here::here("data", "nlsy.csv")</code> and see what file path prints out. Compare with your neighbor.</li>
+<li>Run <code>read.csv(here::here("data", "nlsy.csv"))</code> to make sure your can read in the file.</li>
+<li>Restart the R session to start fresh!</li>
 </ol>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="resources" class="level1">
+<h1>Resources</h1>
 <ul>
 <li>Jenny Bryan’s blog post: <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">Project-oriented workflow</a></li>
-<li>Another <a href="https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects">blog post</a> by Malcolm Barrett</li>
+<li>Another <a href="https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/">blog post</a> by Malcolm Barrett</li>
+<li><a href="https://here.r-lib.org/"><code>{here}</code> package documentation:</a></li>
 </ul>
 
 
@@ -676,7 +650,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<<<<<<< HEAD
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../day-1/02-github.html" class="pagination-link">
@@ -689,8 +662,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
-=======
->>>>>>> main
 </div> <!-- /content -->
 
 
