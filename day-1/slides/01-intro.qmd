@@ -35,6 +35,14 @@ Goal: Learn some best practices to make your life in R easier and your research 
     -   I'll demonstrate while you watch
     -   Practice on your own/with your classmates
 
+## Balance
+
+![](images/de7f2fcf-0f01-43bb-8580-d489c877d672_rw_3840.png)
+
+::: aside
+[Artwork by \@allison_horst](https://twitter.com/allison_horst)
+:::
+
 ## About Louisa {.smaller}
 
 ::: columns
@@ -122,9 +130,8 @@ No one and no field is immune from errors in data analysis. Our goal is to make 
 
     | `install.packages("usethis")`
 
-```{=html}
 <!-- -->
-```
+
 2.  Introduce yourself to git:
 
     | `usethis::use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")`
@@ -146,7 +153,7 @@ If you just updated R to a new "major" version, you will need to reinstall packa
 
 Spelling the package or function's name wrong, or not installing or loading the package
 
-![](images/Screenshot 2023-08-13 at 5.46.55 PM.png)
+![](images/Screenshot%202023-08-13%20at%205.46.55%20PM.png)
 
 ## Using packages
 
