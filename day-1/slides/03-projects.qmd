@@ -1,5 +1,173 @@
 ---
 title: "File management and projects in R"
+subtitle: "or, How to keep your computer safe from fire"
 format: revealjs
 ---
 
+## 
+
+There's a famous [blog post](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) about workflows in R[^1] about a talk [Jenny Bryan](https://jennybryan.org/) gave that included this slide:
+
+[^1]: yes, R blog posts can be famous
+
+> If the first line of your R script is
+>
+> ```{r}
+> setwd("C:\Users\jenny\path\that\only\I\have")
+> ```
+>
+> I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.
+>
+> If the first line of your R script is
+>
+> ```{r}
+> rm(list = ls())
+> ```
+>
+> I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.
+
+## Instead: project-oriented workflow
+
+-   R projects provide a structured and organized way to work on projects in R
+-   R projects encapsulate all project-related files and settings into a single directory
+-   RStudio makes it easy to work with R projects
+
+## R Projects (and related tools) can prevent a lot of accidents!
+
+![](images/bf93f860-9501-4dd6-a6e5-c26a3646fda5_rw_1920.png)
+
+::: aside
+[Artwork by \@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## R Projects
+
+::: columns
+::: {.column width="23%"}
+```         
+my-project/
+├─ my-project.Rproj
+├─ README.md
+├─ data/
+│   ├─ raw/
+│   └─ processed/
+├─ R/
+├─ results/
+│   ├─ tables/
+│   ├─ figures/
+│   └─ output/
+└─ docs/
+```
+:::
+
+::: {.column width="77%"}
+-   An `.Rproj` file is mostly just a placeholder text file that lives in your project folder
+
+    -   It remembers various options, and makes it easy to open a new RStudio session that starts up in the correct working directory. You never need to edit it directly.
+
+-   Otherwise your project acts just like any other folder on your computer
+
+-   You can essentially turn any folder on your computer into an R project, or make a new one via RStudio when you create an R project
+:::
+:::
+
+## Benefits of R Projects
+
+1.  **Isolation**: Each project has its own workspace, separate from other projects
+2.  **Reproducibility**: Projects ensure that code and data are self-contained and portable
+3.  **Collaboration**: Projects facilitate collaboration by sharing the entire project directory
+
+## Always open a project by opening the `.Rproj` file
+
+::: panel-tabset
+## Mac
+
+![](../images/Screenshot%202023-08-10%20at%206.22.10%20PM.png){width="500"}
+
+## Windows
+
+![](../images/Screenshot%202023-08-10%20at%206.28.46%20PM.png){width="500"}
+:::
+
+You can have multiple projects open at once in different RStudio sessions!
+
+## You can also switch between R projects from RStudio
+
+![](images/Screenshot%202023-08-12%20at%2011.49.37%20AM.png)
+
+-   Clicking the arrow icon will open it up in a new session and keep your current session open
+-   Opening an R project will also open all the files you had open last time (including unsaved "Untitled" files!)
+
+## Creating an R Project
+
+1.  Open RStudio and go to **File \> New Project**, or click on the projects button in the upper-right corner of RStudio.
+2.  Choose a project location (New Directory, Version Control, Existing Directory).
+3.  Specify the project directory (where on your computer you are storing the folder with the project) and create the project.
+4.  Choose the project type (e.g., regular project, R package, Shiny app, Quarto website, Bookdown book)
+
+## You already have an R project!
+
+In the exercises, we are going to make some more changes to the repo you *forked* and *cloned*
+
+1.  Download an `.R` script and a `.csv` file from the website
+
+-   We'll be using some data from the 1979 National Longitudinal Survey of Youth
+
+2.  Find your `epi590r-in-class` repo in your file browser
+
+-   Create an `R` folder and a `data` folder
+-   Within the `data` folder add a `raw` and a `clean` folder.
+-   Put the `.csv` file in the `data/raw` folder and the script in `R` folder.
+
+## File structure goal
+
+```         
+epi590r-in-class/
+├─ epi590r-in-class.Rproj
+├─ README.md
+├─ R/
+│   └─ clean-data-bad.R
+├─ data/
+│   ├─ raw/
+│   │  └─ nlsy.csv
+│   └─ clean/
+```
+
+## Exercises, cont.
+
+3.  Return to RStudio. If you closed RStudio, make sure you re-open this project. Look to the filepane to confirm the files are there.
+
+4.  Stage, commit, and push the changes you've made.
+
+5.  Try to run the code, line-by-line, in `clean-data-bad.R`.
+
+-   As you're running it, try to think of changes you might make
+
+## Stop for a settings change!
+
+6.  Tell RStudio to start fresh whenever you start a new session
+
+![](../images/Screenshot%202023-08-10%20at%205.14.32%20PM.png)
+
+7.  Close RStudio, then open it up again by opening the `epi590r-in-class.Rproj` file in your file browser
+
+##
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 15,
+  warn_when = 60*3,
+  right = "33%",
+  padding = "25px",
+  margin = "5%",
+  font_size = "3em",
+  color_warning_background = "#ebcb8b",
+  color_text                = "black",
+  color_running_background  = "#8fbcbb",
+  color_running_text        = "#eceff4",
+  color_finished_background = "#bf616a",
+  color_finished_text       = "#eceff4"
+)
+```

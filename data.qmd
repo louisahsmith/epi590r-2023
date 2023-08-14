@@ -1,0 +1,7 @@
+---
+title: "NLSY data"
+---
+
+![](https://www.nlsinfo.org/sites/default/files/images/NLSY79_0.png)
+
+We're using some data from the [National Longitudinal Survey of Youth 1979](https://www.nlsinfo.org/content/cohorts/nlsy79), a cohort of American young adults aged 14-22 at enrollment in 1979. They continue to be followed to this day, and there is a wealth of publicly available data [online](https://www.nlsinfo.org/investigator/pages/login.jsp). I've downloaded the answers to a survey question about whether respondents wear glasses, a scale about their eyesight with glasses, their (NLSY-assigned 😒) race/ethnicity, their sex (presumably at birth, but unclear), their family's income in 1979, and their age at the birth of their first child.

@@ -4,3 +4,183 @@ subtitle: "A brief introduction"
 format: revealjs
 ---
 
+## 
+
+::: columns
+::: {.column width="50%"}
+### Git
+
+-   version control system
+-   works offline (*repositories* exist on your computer)
+-   tracks changes via *commits*
+-   has a command-line interface and integrations with GUIs (like RStudio)
+:::
+
+::: {.column width="50%"}
+### GitHub
+
+-   web-based platform built around Git
+-   provides a remote location for hosting Git repositories
+-   enables collaboration
+-   offers other features for project management (pull requests, issue tracking)
+:::
+:::
+
+## Our Git/GitHub goals
+
+-   For **you**: Keep track of progress on projects
+    -   Go back when you need to
+    -   Don't lose old work
+    -   Easily search the history of a project
+-   For **others**: Share your work
+    -   Have a place to store and link to code
+    -   Read and interact with others' code
+
+There is a ***lot*** to learn about this topic and I am ***not*** an expert on everything!
+
+## What we won't cover {.smaller}
+
+-   Collaboration
+    -   When multiple people are working on the same GitHub project, things get a little more complex
+    -   I went though almost my whole PhD without working on shared GitHub projects and only now do I feel semi-confident collaborating!
+    -   I think it's best to figure things out in your own projects first
+-   Git on the command line
+    -   There are a lot of functions you might hear about (`git fetch`, `git merge`, etc.)
+    -   RStudio and GitHub will have everything we need!
+
+## 
+
+![](images/github_friends.png)
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [**GitHub for supporting, contributing, and failing safely**](https://www.openscapes.org/blog/2022/05/27/github-illustrated-series/) by Allison Horst and Julia Lowndes.
+:::
+
+##  {background-image="images/68739659-fb6f-41e8-9813-32e1de3d82c0.png" background-size="contain"}
+
+::: aside
+[\@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## Workflow
+
+Create a repository (clone from GitHub, or create on your computer and connect to GitHub)
+
+1.  Write some code!
+2.  When you complete "something", **add** it to the **staging** area
+3.  Write a brief description of what you did ("added linear model"; "created table 1") and **commit**
+4.  **Push** to GitHub
+5.  Repeat!
+
+As long as you are working on your own, all on the same computer, you don't need to worry about pulling
+
+## What is a commit?
+
+![](images/78587c8b-fa99-4c94-bce2-026cf4e588b5.png)
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [**GitHub for supporting, contributing, and failing safely**](https://www.openscapes.org/blog/2022/05/27/github-illustrated-series/) by Allison Horst and Julia Lowndes.
+:::
+
+## What should you commit? Whatever you don't want to lose!
+
+![](images/e3538019-4520-46e6-b9ac-baee061888fc.png)
+
+::: aside
+Illustrations from the [Openscapes](https://www.openscapes.org/) blog [**GitHub for supporting, contributing, and failing safely**](https://www.openscapes.org/blog/2022/05/27/github-illustrated-series/) by Allison Horst and Julia Lowndes.
+:::
+
+##
+
+![](images/Screenshot%202023-08-12%20at%2010.18.48%20PM.png)
+
+## If you know that your code worked at 10am on October 21, 2015, and now it doesn't, you can return!
+
+![](images/635809824922215243-AP-BACK-TO-THE-FUTURE-DAY-76890712.webp)
+
+## Exercises
+
+1.  *Fork* the repo (repository) at <https://github.com/louisahsmith/epi590r-in-class>
+
+2.  On **your** fork of the repository, click the green "Code" button. We are going to *clone* the repository to your computer using *HTTPS*.
+
+## {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Forking**
+
+-   **Purpose:** Used to create a personal copy of another user's repository on your GitHub account.
+-   **Ownership:** The forked repository is still on the original owner's account, and you get your own copy to work with.
+-   **Collaboration:** Allows you to make changes without affecting the original repository. You can make changes, commit them to your fork, and then propose these changes to the original repository through pull requests.
+-   **Relationship:** The forked repository remains connected to the original, but changes aren't automatically synced.
+-   **Use Case:** Commonly used when you want to contribute to a project that you don't have direct write access to.
+:::
+
+::: {.column width="50%"}
+**Cloning**
+
+-   **Purpose:** Used to make a local copy of a GitHub repository on your computer.
+-   **Ownership:** You have a read-write copy on your local machine, but it's not automatically linked to your GitHub account (you can do so through RStudio).
+-   **Collaboration:** Allows you to work on the project locally and make changes, but these changes aren't automatically visible to others.
+-   **Relationship:** The cloned repository is a standalone copy, and changes won't automatically affect the original or other clones.
+-   **Use Case:** Useful when you want to work on a project locally and have full control over commits and pushes.
+:::
+:::
+
+## You have a forked repo on GitHub, now you are cloning that forked repo on your own computer
+
+3.  Open up RStudio.
+
+-   File \> New Project \> "Version Control" \> "Git"
+
+4.  Paste the URL to your fork
+
+-   Name the project directory (easiest if it has the same name as the repo)
+-   Choose where you want to store the project (remember this spot!)
+-   Create Project!
+
+
+##  {background-image="images/68739659-fb6f-41e8-9813-32e1de3d82c0.png" background-size="contain"}
+
+::: aside
+[\@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## Practice making a change, staging, committing, pushing
+
+5.  From the filepane in RStudio, open `README.md`
+
+-   Change the file and save your changes
+
+6.  In your Git pane, click on the checkbox to stage the file
+
+-   Then click "Commit"
+
+7.  You'll see a *diff* of the changes you made to that file
+
+-   Make sure all the changes look good!
+-   Describe what you did
+-   Commit
+-   Push
+
+##
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 15,
+  warn_when = 60*3,
+  right = "33%",
+  padding = "25px",
+  margin = "5%",
+  font_size = "3em",
+  color_warning_background = "#ebcb8b",
+  color_text                = "black",
+  color_running_background  = "#8fbcbb",
+  color_running_text        = "#eceff4",
+  color_finished_background = "#bf616a",
+  color_finished_text       = "#eceff4"
+)
+```

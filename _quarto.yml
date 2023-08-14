@@ -1,8 +1,8 @@
 project:
   type: website
   execute-dir: project
-  # post-render: 
-  #   - create-pdfs.R
+  post-render:
+    - create-pdfs.R
 
 execute:
   freeze: auto
@@ -20,15 +20,17 @@ website:
       - text: "Course content"
         file: day-1/01-intro.qmd
     right:
-      - text: "Resources"
+      - text: "Data"
+        file: data.qmd
+      - text: "R Resources"
         file: resources.qmd
-      - icon: github
-        href: https://www.github.com
   sidebar: 
     contents: 
       - about.qmd
-      - auto: day-1
-      - auto: day-2
+      - auto: "day-1/*"
+      - text: "Day 1 slides pdf"
+        file: day-1/slides/day-1-slides.pdf
+      # - auto: day-2
       - resources.qmd
 
 format:

@@ -1,0 +1,41 @@
+---
+title: "Regression tables with `{gtsummary}`"
+execute: 
+  eval: false
+---
+
+## Slides
+
+Open the slides in a new tab [here](slides/07-regression.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/07-regression.html"></iframe>
+```
+
+</div>
+
+# Exercises
+
+1.  Download the R script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/32b2ee1fbbff1b219917fb3ba5e440de333a060a/R/regression-examples.R) and put it into your in-class project folder.
+2.  Run the examples.
+3.  Each of the univariate regression examples held the outcome (`y =`) constant, while varying the predictor variables with `include =`. You can also look at one predictor across several outcomes. Create a univariate regression table looking at the association between sex (`sex_cat`) as the `x =` variable and each of `nsibs`, `sleep_wkdy`, and `sleep_wknd`, and `income`.
+4.  Fit a Poisson regression (`family = poisson()`) for the number of siblings, using at least 3 predictors of your choice. Create a nice table displaying your Poisson regression and its exponentiated coefficients.
+5.  Instead of odds ratios for wearing glasses, as in the example, we want risk ratios. We can do this by specifying in the regression `family = binomial(link = "log")`. Regress `glasses` on `eyesight_cat` `sex_cat` and create a table showing the risk ratios and confidence intervals from this regression.
+6.  Since `family = binomial(link = "log")` often doesn't converge, we often use Poisson regression with robust standard errors to estimate risk ratios. Fit a Poisson regression instead of the log-binomial regression in the last question. Then create a table using `tidy_fun = partial(tidy_robust, vcov = "HC1")`. It will prompt you to install new package(s) (yes!). See [this page](https://www.danieldsjoberg.com/gtsummary/reference/custom_tidiers.html) for more on custom tidiers.
+7.  Make a table comparing the log-binomial and the log-Poisson results.
+
+# Resources
+
+-   [`{gtsummary}` documentation](https://www.danieldsjoberg.com/gtsummary/)
+-   [`tbl_regression()` vignette](https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html)
+-   [FAQ and table gallery](https://www.danieldsjoberg.com/gtsummary/articles/gallery.html)
+
+<!-- - [`{gt}` documentation](https://gt.rstudio.com/) -->
+
+<!-- - [`{flextable}` documentation](https://ardata-fr.github.io/flextable-book/) -->
+
+<!-- - [`{gtExtras}` documentation](https://jthomasmock.github.io/gtExtras/) -->
+
+<!-- - Discussion [here](https://github.com/quarto-dev/quarto-cli/issues/1556) and [here](https://github.com/davidgohel/flextable/issues/494) about table rendering issues that will be fixed in the next quarto update. -->

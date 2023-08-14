@@ -1,3 +1,10 @@
 ---
-title: "Resources"
+title: "R Resources"
 ---
+
+-   R for Data Science Slack learning group: <https://www.rfordatasci.com/about/>
+-   More extensive Harvard course covering R and other aspects of computing: <https://id529.github.io/>
+-   RMarkdown book: <https://bookdown.org/yihui/rmarkdown/>
+-   Quarto: <https://quarto.org/>
+-   Installing LateX to generate PDFs with RMarkdown or Quarto: <https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html>
+-   Cheat sheets: <https://posit.co/resources/cheatsheets/>

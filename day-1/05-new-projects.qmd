@@ -22,7 +22,7 @@ Open the slides in a new tab [here](slides/05-new-projects.qmd){target="_blank"}
 
     ![](images/Screenshot%202023-08-10%20at%206.53.20%20PM.png)
 
-3.  Look at the git pane. What do you notice compared to [the first time](day-1/02-github.qmd#Exercises) we looked at this pane? Stage and commit the files (I usually use "initial commit" as my first commit message since I haven't don't anything yet!). You'll notice the "Push" button is grayed out -- we'll have to fix that!
+3.  Look at the git pane. What do you notice compared to [the first time](02-github.qmd#Exercises) we looked at this pane? Stage and commit the files (I usually use "initial commit" as my first commit message since I haven't don't anything yet!). You'll notice the "Push" button is grayed out -- we'll have to fix that!
 
     ![](images/Screenshot%202023-08-10%20at%207.11.51%20PM.png)
 
@@ -48,7 +48,7 @@ Open the slides in a new tab [here](slides/05-new-projects.qmd){target="_blank"}
 
 7.  Even though it looks like you can copy and paste the 3 lines of code at once, you can't! You'll get the error you see above (I do this every time). Instead, copy and paste and run them one at a time. Then refresh your GitHub page!
 
-8.  Create a new file called `secret.txt` (you can do this via File \> New File \> Text file, then save the file). Write down your deepest, darkest secrets in there.
+8.  Create a new file called `secrets.txt` (you can do this via File \> New File \> Text file, then save the file). Write down your deepest, darkest secrets in there.
 
     Uh oh! It shows up in the git pane. You don't want to accidentally commit this to your repo!
 

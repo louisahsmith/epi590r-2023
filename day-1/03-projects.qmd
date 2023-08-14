@@ -2,34 +2,55 @@
 title: "R projects and file management"
 ---
 
-# Overview
-
-Having a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the `{here}` package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The `{here}` package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with `setwd()`. Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.
-
-# Slides
-
-Open the slides in a new tab [here](../slides/projects.qmd){target="_blank"}.
-
 <div>
 
 ```{=html}
-<iframe class="slide-deck" src="../slides/projects.html"></iframe>
+<iframe class="slide-deck" src="slides/03-projects.html"></iframe>
 ```
 
 </div>
 
-# Exercises
+Open the slides in a new tab [here](slides/03-projects.qmd){target="_blank"}.
 
-1.  Create an R project for this workshop (you do want to check off "Use renv" -- we'll get to that later)
-2.  Install the `{here}` package
-3.  Download the `.csv` file at <https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv>
-4.  Create a `data` folder within your R project directory and move the `nlsy.csv` file there.
-5.  Run `here::here("data", "nlsy.csv")` and see what file path prints out. Compare with your neighbor.
-6.  Run `read.csv(here::here("data", "nlsy.csv"))` to make sure your can read in the file.
-7.  Restart the R session to start fresh!
+## Exercises
 
-# Resources
+1.  Download the `.R` script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/R/clean-data-bad.R) and the `.csv` file [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/data/raw/nlsy.csv).
+
+2.  In your computer file browser, find your `epi590r-in-class` repo and create an `R` folder and a `data` folder. Within the `data` folder add a `raw` folder and a `clean` folder. Put the `.csv` file in the `data/raw` folder and the script in `R` folder. Your file structure should look like this:
+
+    ```         
+    ├── epi590r-in-class.Rproj
+    ├── README.md
+    ├── R/
+    │   ├── clean-data-bad.R
+    ├── data/
+    │   ├── raw/
+    │   │   ├── nlsy.csv
+    │   ├── clean/
+    ```
+
+3.  Return to RStudio. Look to the filepane to confirm the files are there.
+
+4.  Look at your Git pane. What do you notice? Stage, commit, and push the changes you've made.
+
+5.  Try to run the code, line-by-line, in `clean-data-bad.R`. What do you notice?
+
+6.  Go to Tools \> Global Options and under General, change your settings so that they match these:
+
+    ![](images/Screenshot%202023-08-10%20at%205.14.32%20PM.png){width="315"}
+
+7.  Close RStudio. Open it up again by opening the `epi590r-in-class.Rproj` file in your file browser. You should have a clean environment!
+
+    ::: panel-tabset
+    ## Mac
+
+    ![](images/Screenshot%202023-08-10%20at%206.22.10%20PM.png){width="500"}
+
+    ## Windows
+
+    ![](images/Screenshot%202023-08-10%20at%206.28.46%20PM.png){width="500"}
+    :::
+
+## Resources
 
 -   Jenny Bryan's blog post: [Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
--   Another [blog post](https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/) by Malcolm Barrett
--   [`{here}` package documentation:](https://here.r-lib.org/)

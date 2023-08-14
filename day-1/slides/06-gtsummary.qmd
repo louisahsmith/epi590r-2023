@@ -1,0 +1,190 @@
+---
+title: "Descriptive tables with `{gtsummary}`"
+subtitle: Make an easy Table 1
+format: revealjs
+filters:
+  - code-fullscreen
+execute: 
+  eval: true
+---
+
+## What is `{gtsummary}`?
+
+-   Create tables that are publication-ready
+-   Highly customizable
+-   Descriptive tables, regression tables, etc.
+
+::: center
+![](https://github.com/ddsjoberg/gtsummary/raw/main/man/figures/logo.png){height="300px"}
+:::
+
+## `gtsummary::tbl_summary()`
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+nlsy_cols <- c("glasses", "eyesight", "sleep_wkdy", "sleep_wknd", 
+               "id", "nsibs", "samp", "race_eth", "sex", "region", 
+               "income", "res_1980", "res_2002", "age_bir")
+nlsy <- read_csv(here::here("data", "nlsy.csv"), 
+                 na = c("-1", "-2", "-3", "-4", "-5", "-998"),
+                 skip = 1, col_names = nlsy_cols) |> 
+  mutate(region_cat = factor(region, labels = c("Northeast", "North Central", "South", "West")),
+         sex_cat = factor(sex, labels = c("Male", "Female")),
+         race_eth_cat = factor(race_eth, labels = c("Hispanic", "Black", "Non-Black, Non-Hispanic")),
+         eyesight_cat = factor(eyesight, labels = c("Excellent", "Very good", "Good", "Fair", "Poor"))) 
+```
+
+```{r}
+#| output-location: column
+library(gtsummary)
+
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir))
+```
+
+## You can also refer to variables using helper functions
+
+```{r}
+#| output-location: column
+library(gtsummary)
+
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(ends_with("cat"), glasses, age_bir))
+```
+
+## We probably want to name the variables {.smaller}
+
+```{r}
+#| output-location: column
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir),
+  label = list(
+    race_eth_cat ~ "Race/ethnicity",
+    region_cat ~ "Region",
+    eyesight_cat ~ "Eyesight",
+    glasses ~ "Wears glasses",
+    age_bir ~ "Age at first birth"
+  ),
+  missing_text = "Missing")
+```
+
+## And do a million other things {.smaller}
+
+```{r}
+#| output-location: column
+tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat,
+              eyesight_cat, glasses, age_bir),
+  label = list(
+    race_eth_cat ~ "Race/ethnicity",
+    eyesight_cat ~ "Eyesight",
+    glasses ~ "Wears glasses",
+    age_bir ~ "Age at first birth"
+  ),
+  missing_text = "Missing") |> 
+  add_p(test = list(all_continuous() ~ "t.test", 
+                    all_categorical() ~ "chisq.test")) |> 
+  add_overall(col_label = "**Total**") |> 
+  bold_labels() |> 
+  modify_footnote(update = everything() ~ NA) |> 
+  modify_header(label = "**Variable**", p.value = "**P**")
+```
+
+## Additional arguments
+
+We saw `include =`, `by =`, `label =`, `missing_text =` in the example
+
+`statistic =`:
+
+-   The default is `list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}%)")`
+-   For categorical variables, you can use `{n}` (frequency), `{N}` (denominator), `{p}` formatted percentage
+-   For continuous variables, you can use `{median}`, `{mean}`, `{sd}`, `{var}`, `{min}`, `{max}`, `{sum}`, ⁠`{p##}` (any percentile), or any function `{foo}`
+-   You can refer to individual variables with their names: `list(age ~ "min = {min}; max = {max}")`
+
+## Additional arguments
+
+`digits =`:
+
+-   It will do its best to guess the appropriate number of digits
+-   Otherwise, you can pass a function:
+    -    `digits = everything() ~ style_sigfig`
+-   Or a value for each statistic shown
+    -   `statistic = list(age ~ "min = {min}; max = {max}",                 year_of_birth = "{median} ({p25}, {p75})")` :
+    -   `digits = list(age ~ c(1, 1)              year_of_birth ~ c(0, 0, 0))`
+
+## Additional arguments
+
+`type =`:
+
+-   One of "continuous", "continuous2", "categorical", "dichotomous"
+    -   If a variable only has 0/1, TRUE/FALSE, or yes/no values, it will be treated as dichotomous
+        -   You can override this with `type = list(``varname``~ "categorical")`
+        -   Dichotomous variables only show one row (i.e., the percentage of 1's) unless you change to categorical
+            -   You can change which level to show with `value = list(varname ~ "level to show")`
+    -   "continuous2" variables can have multiple rows of statistics
+
+`missing =`:
+
+-   Show NA values in the table ("no", "ifany", "always")
+
+## Additional functions
+
+-   `add_overall()`: In a stratified table, add a column for all strata combined
+-   `bold_labels()`: Bold the variable names (also `bold_levels()`)
+-   `add_p()`: Add a p-value (required by some journals 🤷‍♀️)
+-   `modify_footnote(update = everything() ~ NA)`: Remove the footnotes (can also add footnotes!)
+-   `modify_header()`: Change the header column
+
+## `tbl_summary()`
+
+-   Incredibly customizeable
+
+    -   So many options can be overwhelming
+    -   The [FAQ/gallery](https://www.danieldsjoberg.com/gtsummary/articles/gallery.html) is an incredible resource
+
+-   To save, I often just view in the web browser and copy and paste into a Word document
+
+    -   Can also be used within quarto/R Markdown
+
+    ![](images/Screenshot 2023-08-13 at 1.27.15 PM.png)
+
+## Exercises
+
+1. Download the script with some examples and save in your in-class project directory. 
+
+2. Install `{gtsummary}` and run the examples.
+
+3-7. You're on your own! Work with your neighbors, and we'll come back together to go over these.
+
+Extra time? Start a table using the data you downloaded for your final project! Make sure you switch to that R project!
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 15,
+  warn_when = 60*3,
+  right = "33%",
+  padding = "25px",
+  margin = "5%",
+  font_size = "3em",
+  color_warning_background = "#ebcb8b",
+  color_text                = "black",
+  color_running_background  = "#8fbcbb",
+  color_running_text        = "#eceff4",
+  color_finished_background = "#bf616a",
+  color_finished_text       = "#eceff4"
+)
+```

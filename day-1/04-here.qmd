@@ -31,8 +31,9 @@ Open the slides in a new tab [here](slides/04-here.qmd){target="_blank"}.
 
     Then run the same lines as above. What do you notice?
 
-4.  Download the `.R` script [here](https://github.com/louisahsmith/epi590r-in-class/blob/db030e9d10e6deb5658a4dddf52542bbc4b0a488/R/clean-data-good.R) and use your file browser to put it in the R folder in your project. Open the script and run through the code line-by-line. Compare it with the code from the last section.
+4.  Download the `.R` script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/db030e9d10e6deb5658a4dddf52542bbc4b0a488/R/clean-data-good.R) and use your file browser to put it in the R folder in your project. Open the script and run through the code line-by-line. Compare it with the code from the last section.
 
 ## Resources
 
 -   [`{here}` package documentation](https://here.r-lib.org/)
+-   A [blog post](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects) by Malcolm Barrett

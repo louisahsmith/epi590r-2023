@@ -1,0 +1,27 @@
+---
+title: "Finer control over statistics"
+execute: 
+  eval: false
+---
+
+## Slides
+
+Open the slides in a new tab [here](slides/08-statistics.qmd){target="_blank"}.
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="slides/08-statistics.html"></iframe>
+```
+</div>
+
+# Exercises
+
+1. Download the R script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/cb083be16ed097fa18913cdaaf6bdb4b7c1aac7d/R/broom-examples.R). You know where to put it!
+2. Run through the examples.
+3. In the last set of exercises, you compared a log-binomial model to a log-Poisson model with robust standard errors using `{gtsummary}`. Your job now is to do the same using `broom::tidy()`. You'll need some extra packages, though, because if you look at the `broom::tidy()` documentation, it doesn't say anything about adding robust standard errors. The answer, then, is usually to start Googling. I've done so for you and found [this post](https://evalf21.classes.andrewheiss.com/example/standard-errors/#sandwich-and-coeftest) (I highly recommend all of [Andrew Heiss's](https://www.andrewheiss.com/blog/) R and statistics explanations!). Use this as a guide to create a dataframe with the results from both models (you can use `bind_rows()` to combine them, as in the example).
+4. Return to your final project. You are going to need to do some type of modeling and create some tables and figures, so this is a good time to start playing around!
+
+
+# Resources
+
+- [`{broom}` documentation](https://broom.tidymodels.org/)

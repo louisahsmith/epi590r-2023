@@ -287,7 +287,7 @@ code span.co {
 }
 
 .reveal div.cell :first-child {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 .reveal div.larger-code {
@@ -296,4 +296,53 @@ code span.co {
 
 .reveal div.cell {
   height: max-content !important;
+}
+
+.countdown {
+  padding-top: 25px !important;
+}
+
+.countdown-bump-down {
+  padding-top: 10px !important;
+}
+
+#fullscreen-box{
+  background-color: #2e3440 !important;
+}
+
+div#fullscreen-box pre.sourceCode {
+  background-color: #2e3440 !important;
+}
+
+div#fullscreen-box code {
+  font-size: large !important;
+}
+
+.reveal-full-page div#fullscreen-box pre.numberSource {
+  border-left: 0 !important;
+}
+
+.fullscreen-button {
+    background-color: $gray-200 !important;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+.code-copy-button {
+  background-color: $gray-200 !important;
+  display: block !important;
+      padding-top: 2px !important;
+    padding-bottom: 3px !important;
+}
+.code-copy-button:hover {
+  background-color: $gray-200 !important;
+  display: block !important;
+  padding-top: 2px !important;
+  padding-bottom: 3px !important;
+}
+
+div#fullscreen-box pre .fullscreen-button {
+    padding-top: 5px !important;
 }
