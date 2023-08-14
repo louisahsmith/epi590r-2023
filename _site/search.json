@@ -84,6 +84,16 @@
     "text": "Resources\n\nThis is a slightly simpler (I think) version of the Existing project, GitHub last workflow\n.gitignore patterns\n.gitignore documentation"
   },
   {
+<<<<<<< HEAD
+=======
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EPI 590R",
+    "section": "",
+    "text": "August 14-15, 2023\n\n9 am - 5 pm\n\n\n\nLouisa Smith\nAssistant Professor\nDepartment of Health Sciences, Northeastern University\nl.smith@northeastern.edu"
+  },
+  {
+>>>>>>> 8630c48aab5994ea4e9708a6b8db05f39e7ac97a
     "objectID": "about.html",
     "href": "about.html",
     "title": "Syllabus",
@@ -242,6 +252,7 @@
     "href": "day-1/08-statistics.html#slides",
     "title": "Finer control over statistics",
     "section": "",
+<<<<<<< HEAD
     "text": "Open the slides in a new tab here."
   },
   {
@@ -306,5 +317,8 @@
     "title": "R Resources",
     "section": "",
     "text": "R for Data Science Slack learning group: https://www.rfordatasci.com/about/\nMore extensive Harvard course covering R and other aspects of computing: https://id529.github.io/\nRMarkdown book: https://bookdown.org/yihui/rmarkdown/\nQuarto: https://quarto.org/\nInstalling LateX to generate PDFs with RMarkdown or Quarto: https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html\nCheat sheets: https://posit.co/resources/cheatsheets/"
+=======
+    "text": "Overview\nHaving a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the {here} package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The {here} package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with setwd(). Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nCreate an R project for this workshop (you do want to check off “Use renv” – we’ll get to that later)\nInstall the {here} package\nDownload the .csv file at https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv\nCreate a data folder within your R project directory and move the nlsy.csv file there.\nRun here::here(\"data\", \"nlsy.csv\") and see what file path prints out. Compare with your neighbor.\nRun read.csv(here::here(\"data\", \"nlsy.csv\")) to make sure your can read in the file.\nRestart the R session to start fresh!\n\n\n\nResources\n\nJenny Bryan’s blog post: Project-oriented workflow\nAnother blog post by Malcolm Barrett\n{here} package documentation:"
+>>>>>>> 8630c48aab5994ea4e9708a6b8db05f39e7ac97a
   }
 ]
