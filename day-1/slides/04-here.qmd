@@ -1,6 +1,113 @@
 ---
 title: "The `{here}` package"
-subtitle: "or, How to keep your computer safe from fire"
+subtitle: Fire safety, continued
 format: revealjs
+execute: 
+  eval: false
 ---
 
+## The problem with `setwd()`
+
+-   `setwd()` changes the working directory, leading to potential issues in collaboration and reproducibility
+
+    -   You and I don't have the same file structure!
+    -   For example, my current working directory is
+
+    ```{r}
+    #| eval: true
+    getwd()
+    ```
+
+-   It's also really annoying to change your working directory when you move around files and folders, even if it's just you using them
+
+## Do you think this code from 2015 still works?
+
+![](images/Screenshot 2023-08-13 at 11.08.36 AM.png)
+
+## Referring to files with the `here` package
+
+```{r, eval = FALSE}
+source(here::here("R", "functions.R"))
+
+dat <- read_csv(here::here("data", "raw", "data.csv"))
+
+p <- ggplot(dat) + geom_point(aes(x, y))
+
+ggsave(plot = p, 
+       filename = here::here("results", "figures", "fig.pdf"))
+```
+
+You can also separate the file paths with `/`:
+
+```{r}
+dat <- read_csv(here::here("data/raw/data.csv"))
+```
+
+## How it works
+
+-   Construct file paths with reference to the top directory holding your `.Rproj` file.
+
+-   `here::here("data", "raw", "data.csv")` for me, here, becomes `"/Users/l.smith/Documents/Teaching/Emory/epi590r-2023/data/raw/data.csv"`
+
+    -   If I change my working directory to somewhere else within my project, it will still give me that path
+
+-   And if I send you my code to run, it will become whatever file path *you* need it to be, as long as you're running it within the R Project.
+
+## Referring to the `here` package
+
+```{r, eval = FALSE}
+here::here()
+```
+
+is equivalent to
+
+```{r, eval = FALSE}
+library(here)
+here()
+```
+
+I just prefer to write out the package name whenever I need it, but you can load the package for your entire session if you want.
+
+## Exercises
+
+1.  Install the `{here}` package:
+
+    | `install.packages("here")`
+
+2.  Make sure you're in your in-class R project! In the console, run:
+
+    | `here::here()` to print your project directory
+    | `getwd()` to print your working directory
+
+    What do you notice?
+
+3.  In the console, run:
+
+    | `setwd("data")` to set your working directory
+
+    Then run the same lines as above. What do you notice?
+
+## Exercises, cont.
+
+4.  Download the next `.R` script from the website and use your file browser to put it in the R folder in your project. 
+- Run through the code line-by-line. 
+- Compare it with the code from the last section.
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 15,
+  warn_when = 60*3,
+  right = "33%",
+  padding = "25px",
+  margin = "5%",
+  font_size = "3em",
+  color_warning_background = "#ebcb8b",
+  color_text                = "black",
+  color_running_background  = "#8fbcbb",
+  color_running_text        = "#eceff4",
+  color_finished_background = "#bf616a",
+  color_finished_text       = "#eceff4"
+)
+```

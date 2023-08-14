@@ -12,7 +12,7 @@ title: "Introduction to Git and GitHub"
 
 Open the slides in a new tab [here](slides/02-github.qmd){target="_blank"}.
 
-## Exercise
+## Exercises
 
 1.  *Fork* the repo at <https://github.com/louisahsmith/epi590r-in-class> by clicking "Fork" in the upper right.
 

@@ -14,7 +14,7 @@ Open the slides in a new tab [here](slides/03-projects.qmd){target="_blank"}.
 
 ## Exercises
 
-1.  Download the `.R` script [here](https://github.com/louisahsmith/epi590r-in-class/blob/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/R/clean-data-bad.R) and the `.csv` file [here](https://github.com/louisahsmith/epi590r-in-class/blob/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/data/raw/nlsy.csv).
+1.  Download the `.R` script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/R/clean-data-bad.R) and the `.csv` file [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/757acd5d2a9507e8eec1eb365c0cc1a16233f1d8/data/raw/nlsy.csv).
 
 2.  In your computer file browser, find your `epi590r-in-class` repo and create an `R` folder and a `data` folder. Within the `data` folder add a `raw` folder and a `clean` folder. Put the `.csv` file in the `data/raw` folder and the script in `R` folder. Your file structure should look like this:
 
@@ -35,9 +35,11 @@ Open the slides in a new tab [here](slides/03-projects.qmd){target="_blank"}.
 
 5.  Try to run the code, line-by-line, in `clean-data-bad.R`. What do you notice?
 
-6.  Go to Tools \> Global Options and under General, change your settings so that they match these:![](images/Screenshot%202023-08-10%20at%205.14.32%20PM.png){width="315"}
+6.  Go to Tools \> Global Options and under General, change your settings so that they match these:
 
-7.  Close RStudio. Open it up again by opening the `epi590r-2023.Rproj` file in your file browser. You should have a clean environment!
+    ![](images/Screenshot%202023-08-10%20at%205.14.32%20PM.png){width="315"}
+
+7.  Close RStudio. Open it up again by opening the `epi590r-in-class.Rproj` file in your file browser. You should have a clean environment!
 
     ::: panel-tabset
     ## Mac
@@ -52,4 +54,3 @@ Open the slides in a new tab [here](slides/03-projects.qmd){target="_blank"}.
 ## Resources
 
 -   Jenny Bryan's blog post: [Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
--   Another [blog post](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects) by Malcolm Barrett

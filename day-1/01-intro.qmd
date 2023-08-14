@@ -12,7 +12,7 @@ title: "Introduction to the course"
 
 Open the slides in a new tab [here](slides/01-intro.qmd){target="_blank"}.
 
-## Exercise
+## Exercises
 
 1.  Install the `{usethis}` package:
 
@@ -20,7 +20,7 @@ Open the slides in a new tab [here](slides/01-intro.qmd){target="_blank"}.
 
 2.  Introduce yourself to git:
 
-    | `use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")`
+    | `usethis::use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")`
 
 3.  Create a github token:
 
@@ -38,7 +38,7 @@ Open the slides in a new tab [here](slides/01-intro.qmd){target="_blank"}.
 
     | `gitcreds::gitcreds_set()`
 
-    You're all set! Come back to these instructions and repeat whenever your token expires or are using a different device.
+    You're all set! Come back to these instructions and repeat whenever your token expires or you are using a different device.
 
 [^1]: You can always delete a token if, say, you lose your laptop or it gets compromised.
 

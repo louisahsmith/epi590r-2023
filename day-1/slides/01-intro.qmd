@@ -2,5 +2,225 @@
 title: "Intro to EPI 590R"
 subtitle: "Why this class?"
 format: revealjs
+execute: 
+  eval: true
 ---
 
+## About this class
+
+Goal: Learn some best practices to make your life in R easier and your research more reproducible
+
+-   Quick! Intense!
+    -   It will require practice afterward, and time to sink in
+    -   The goal is to set you up for success and give you resources to learn more
+-   You don't have to use everything you learn here!
+    -   Some of these tools I use for *every* project, some just occasionally
+    -   Experiment with what works for you, a little at a time
+
+## 
+
+![](images/9718f461-8060-433b-b014-b294da38d172_rw_3840.png)
+
+::: aside
+[Artwork by \@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## About this class
+
+-   Everything you need is at <http://epi590r-2023.louisahsmith.com>
+    -   Canvas will link you there, but good to bookmark as well
+    -   The website will be up indefinitely
+-   General format:
+    -   Some overview slides
+    -   I'll demonstrate while you watch
+    -   Practice on your own/with your classmates
+
+## About Louisa {.smaller}
+
+::: columns
+::: {.column width="45%"}
+-   Assistant professor at Northeastern University
+    -   Department of Health Sciences and the Roux Institute (Portland, Maine)
+-   Started using R during my master's (so almost 9 years of experience)
+    -   I learned mostly by doing!
+    -   Twitter, blogs, RStudio::conf videos, meetups
+-   Basically everything I do is in R!
+-   Actual epi research in causal inference, pregnancy, lots of other stuff
+:::
+
+::: {.column width="55%"}
+![](images/apppic.png)
+:::
+:::
+
+## Most important thing about me
+
+![](images/IMG_2433.jpeg)
+
+## Why this class?
+
+::: panel-tabset
+## Economics
+
+![](images/alphabetical.png)
+
+## Genes
+
+![](images/gene-names.png)
+
+## Orangutans
+
+![](images/orangutans.png)
+:::
+
+## Errors are everywhere
+
+::: columns
+::: {.column width="33%"}
+![](images/tweet1.png)
+:::
+
+::: {.column width="33%"}
+![](images/tweet2.png)
+:::
+
+::: {.column width="33%"}
+![](images/tweet3.png)
+:::
+:::
+
+No one and no field is immune from errors in data analysis. Our goal is to make them as unlikely as possible (and report them when we find them!)
+
+## But also!
+
+-   It's really boring to copy lots of numbers into a table
+    -   And then change a tiny thing in the analysis and do it all over again
+-   It's really frustrating to lose work when your computer crashes, or completely change an analysis before your advisor forgets what they told you last time and has you change it back
+-   It's fun when things just work! And you get more time for the fun parts of epidemiology
+
+## 
+
+![](images/483e1776-7126-4255-8e84-0557c397025f_rw_3840.png)
+
+::: aside
+[Artwork by \@allison_horst](https://twitter.com/allison_horst)
+:::
+
+## 
+
+![](images/5c559781-f15a-4be9-8af0-426fcc71a9e8_rw_3840.png)
+
+::: aside
+[Artwork by \@allison_horst](https://twitter.com/allison_horst)
+:::
+
+# Questions?
+
+## Exercises: Connecting to GitHub
+
+1.  Install the `{usethis}` package:
+
+    | `install.packages("usethis")`
+
+```{=html}
+<!-- -->
+```
+2.  Introduce yourself to git:
+
+    | `usethis::use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")`
+
+When you make changes to your code, they will be associated with this name and email address (this doesn't really matter for our purposes)
+
+-   You only need to do this once
+
+## Installing packages
+
+If you just updated R to a new "major" version, you will need to reinstall packages
+
+-   I tend to do this as I need them rather than try to reinstall them all at once
+    -   RStudio tries to help!
+
+        ![](images/Screenshot%202023-08-12%20at%2012.55.06%20PM.png)
+
+## Possible errors
+
+Spelling the package or function's name wrong, or not installing or loading the package
+
+![](images/Screenshot 2023-08-13 at 5.46.55 PM.png)
+
+## Using packages
+
+::: columns
+::: {.column width="50%"}
+If you are writing a script you will save, and will use several functions from this package
+
+``` r
+library(usethis)
+use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com"
+```
+:::
+
+::: {.column width="50%"}
+If you are just running some quick code in the console or only need to use the package a few times in a script
+
+``` r
+usethis::use_git_config(user.name = "Louisa Smith", user.email = "louisahsmith@gmail.com")
+```
+:::
+:::
+
+I try to only run `library(package)` from a script (not the console) so that there's a "record" of me loading the package, or else I might accidentally write code that doesn't work later
+
+## 
+
+Since I don't need to run this once, I would probably run this from the console (bottom) rather than a script (top)
+
+![](images/Screenshot%202023-08-12%20at%201.03.11%20PM.png)
+
+Running from the console is great for `install.packages()`, quick calculations, fiddling with code until you get it right, or scenarios like this -- otherwise save your code in a script!
+
+## Connect to GitHub
+
+3.  Create a github token:
+
+    | `usethis::create_github_token()`
+
+Instead of entering your password every time, this is a secure way to connect to GitHub
+
+-   If you are ever asked for your GitHub password in RStudio, you *have* to give this instead
+
+## Connect to GitHub
+
+4.  Copy the token
+
+5.  Back in R, run this code and paste your token where it says "Enter password":
+
+    | `gitcreds::gitcreds_set()`
+
+You can do this again whenever your token expires or you are using a different device
+
+## Exercises
+
+-   Refer back to the slides as needed
+-   Ask a classmate if you're stuck
+-   Raise your hand for the teaching team
+-   Done early? Help a friend! Read the resources section! Play around in R! Check your email!
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 15,
+  warn_when = 60*3,
+  right = "33%",
+  padding = "25px",
+  margin = "5%",
+  font_size = "3em",
+  color_warning_background = "#ebcb8b",
+  color_text                = "black",
+  color_running_background  = "#8fbcbb",
+  color_running_text        = "#eceff4",
+  color_finished_background = "#bf616a",
+  color_finished_text       = "#eceff4"
+)
+```

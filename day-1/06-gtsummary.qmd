@@ -1,0 +1,31 @@
+---
+title: "Descriptive tables with `{gtsummary}`"
+execute: 
+  eval: false
+---
+
+## Slides
+
+Open the slides in a new tab [here](slides/06-gtsummary.qmd){target="_blank"}.
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="slides/06-gtsummary.html"></iframe>
+```
+</div>
+
+# Exercises
+
+1. Download the R script [here](https://raw.githubusercontent.com/louisahsmith/epi590r-in-class/32b2ee1fbbff1b219917fb3ba5e440de333a060a/R/table1-examples.R) and put it into your in-class project folder.
+2. Install `{gtsummary}` and run the examples.
+3. Make a `tbl_summary()`. Include categorical region, race/ethnicity, income, and the sleep variables (use a [helper function](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html#select_helpers) to select those) and make sure they are nicely labeled.
+5. Stratify the table by sex. Add a p-value comparing the sexes and an overall column combining both sexes.
+4. For the income variable, show the 10th and 90th percentiles of income with 3 digits, and for the sleep variables, show the min and the max with 1 digit.
+6. Add a footnote to the race/ethnicity variable with a link to the page describing how NLSY classified participants: https://www.nlsinfo.org/content/cohorts/nlsy79/topical-guide/household/race-ethnicity-immigration-data
+7. Play around with the extra functions from the examples and/or from the [documentation](https://www.danieldsjoberg.com/gtsummary/)
+
+# Resources
+
+- [`{gtsummary}` documentation](https://www.danieldsjoberg.com/gtsummary/)
+- [`tbl_summary()` vignette](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
+- [FAQ and table gallery](https://www.danieldsjoberg.com/gtsummary/articles/gallery.html)
