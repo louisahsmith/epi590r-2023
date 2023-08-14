@@ -84,16 +84,6 @@
     "text": "Resources\n\nThis is a slightly simpler (I think) version of the Existing project, GitHub last workflow\n.gitignore patterns\n.gitignore documentation"
   },
   {
-<<<<<<< HEAD
-=======
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EPI 590R",
-    "section": "",
-    "text": "August 14-15, 2023\n\n9 am - 5 pm\n\n\n\nLouisa Smith\nAssistant Professor\nDepartment of Health Sciences, Northeastern University\nl.smith@northeastern.edu"
-  },
-  {
->>>>>>> 8630c48aab5994ea4e9708a6b8db05f39e7ac97a
     "objectID": "about.html",
     "href": "about.html",
     "title": "Syllabus",
@@ -185,27 +175,6 @@
     "text": "Honor Code\nYou are bound by Emory University’s Student Honor and Conduct Code. RSPH requires that all material submitted by a student fulfilling his or her academic course of study must be the original work of the student. Violations of academic honor include any action by a student indicating dishonesty or a lack of integrity in academic ethics. Academic dishonesty refers to cheating, plagiarizing, assisting other students without authorization, lying, tampering, or stealing in performing any academic work, and will not be tolerated under any circumstances.\nThe RSPH Honor Code states: “Plagiarism is the act of presenting as one’s own work the expression, words, or ideas of another person whether published or unpublished (including the work of another student). A writer’s work should be regarded as his/her own property.” (http://www.sph.emory.edu/cms/current_students/enrollment_services/honor_code.html)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EPI 590R",
-    "section": "",
-    "text": "August 14-15, 2023\n\n9 am - 5 pm\n\n\n\nLouisa Smith\nAssistant Professor\nDepartment of Health Sciences, Northeastern University\nl.smith@northeastern.edu"
-  },
-  {
-    "objectID": "day-2/04-renv.html",
-    "href": "day-2/04-renv.html",
-    "title": "Package management with {renv}",
-    "section": "",
-    "text": "Overview\n{renv} is a package management tool for R that helps you create isolated and reproducible R environments. It allows you to specify the exact versions of R packages that your project depends on, ensuring that your code runs consistently across different environments.\nWith {renv}, you can create a project-specific library of packages, which are separate from your global R library. This allows you to have different versions of packages for different projects and ensures that your project dependencies are self-contained. {renv} also provides tools for managing and resolving package dependencies, making it easier to collaborate with others and share your code.\nTo use {renv} in your projects, set up the project environment by running renv::init(). This command creates an renv.lock file, which specifies the exact versions of packages needed for the project. Other people can then replicate the environment by running renv::restore() using the renv.lock file.\n\n\nSlides\nOpen the slides in a new tab here.\nDownload the slides as a new pdf here.\n\n\n\n\n\nExercise\n\nDownload the renv.lock file here.\n\n\nIf it downloads a file, navigate to your R project in your computer file system and replace the renv.lock file that’s already there with this new one.\nIf it opens in the web browser, copy all the text and paste over the renv.lock file that’s already in your R project.\n\n\nIn your R project, run renv::restore().\nInstall a new R package of your choice. (Not sure what to choose? Try one of these fun packages. For example, I did install.packages(\"hadley/emo\").)\nCreate an R script and save it in your R project. Include some code that requires the package. For example:\n\n\nemo::ji(\"banana\")\n\n\nRun renv::status() to make sure your project picked up the package as a dependency.\nRun renv::snapshot() to record that package in your lockfile.\nOpen your lockfile and look for your new package. For example, mine now has:\n\n\"emo\": {\n      \"Package\": \"emo\",\n      \"Version\": \"0.0.0.9000\",\n      \"Source\": \"git\",\n      \"RemoteType\": \"git\",\n      \"RemoteUrl\": \"https://github.com/hadley/emo\",\n      \"RemoteHost\": \"api.github.com\",\n      \"RemoteUsername\": \"hadley\",\n      \"RemoteRepo\": \"emo\",\n      \"RemoteRef\": \"master\",\n      \"RemoteSha\": \"3f03b11491ce3d6fc5601e210927eff73bf8e350\",\n      \"Requirements\": [\n        \"R\",\n        \"assertthat\",\n        \"crayon\",\n        \"glue\",\n        \"lubridate\",\n        \"magrittr\",\n        \"purrr\",\n        \"rlang\",\n        \"stringr\",\n        \"utils\"\n      ],\n      \"Hash\": \"eb32b8f0bb50621ad498f5d836b546a4\"\n    },\n\n\nResources\n\n{renv} documentation"
-  },
-  {
-    "objectID": "day-2/01-gtsummary.html",
-    "href": "day-2/01-gtsummary.html",
-    "title": "Descriptive and regression tables with {gtsummary}",
-    "section": "",
-    "text": "Overview\n{gtsummary} has become my preferred way of creating tables of all types. It’s highly customizable and can almost always get the exact output I’m looking for. It’s based of the {gt} package for creating tables, so can be even more customizable. It also includes functions for pulling out numbers from the tables to report in the text.\n\n\nSlides\nOpen the slides in a new tab here.\nDownload the slides as a new pdf here.\n\n\n\n\n\nExercises\n\nDownload the quarto document here and put it into your R project folder.\nRender the document.\nMake a tbl_summary(). Include (at least) number of hours of sleep on weekdays and weekends, categorical region, and income and make sure they are nicely labeled. Play around with the extra functions from the examples and/or from the documentation\nFit a Poisson regression for the number of siblings, using at least 3 predictors of your choice. Create a nice table displaying your Poisson regression and its exponentiated coefficients.\n\n\n\nResources\n\n{gtsummary} documentation\n{gt} documentation\n{flextable} documentation\n{gtExtras} documentation\nDiscussion here and here about table rendering issues that will be fixed in the next quarto update."
-  },
-  {
     "objectID": "day-2/06-quarto.html",
     "href": "day-2/06-quarto.html",
     "title": "Reports and manuscripts with Quarto",
@@ -227,18 +196,11 @@
     "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
   },
   {
-    "objectID": "day-2/03-targets.html",
-    "href": "day-2/03-targets.html",
-    "title": "targets",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EPI 590R",
     "section": "",
-    "text": "Overview\nThe {targets} R package offers a superior workflow compared to a script-based approach, addressing several common challenges:\n\nManaging a sequence of computational steps : {targets} allows you to define a pipeline of computational steps, specifying the dependencies and relationships between them.\nSelective updates : With {targets}, you only need to update the specific steps affected by a change. It intelligently determines which steps are affected and updates them accordingly, saving time and computational resources.\nEnsuring validity of results : {targets} automatically tracks the relationships between steps and ensures that the results at the end of the pipeline remain valid, even if intermediate steps change.\n\nKey advantages of the {targets} workflow over script-based approaches include:\n\nReproducibility : By explicitly defining dependencies, {targets} ensures that changes in one step trigger the re-evaluation of dependent steps, maintaining reproducibility.\nEfficiency : Instead of rerunning all scripts, {targets} selectively executes only the affected steps, optimizing computational efficiency.\nScalability : {targets} provides a clear overview of dependencies, making it easier to manage and scale complex workflows with numerous scripts.\nSimplified file management : {targets} automatically manages input and output files, removing the burden of manually tracking file dependencies and their locations.\n\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nDownload a new R project as a zip file (green “Code” button -&gt; “Download ZIP”). (If you are familiar with git/github, feel free to clone it directly.)\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made earlier into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun `tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
-  },
-  {
-    "objectID": "day-2/02-function.html",
-    "href": "day-2/02-function.html",
-    "title": "Introduction to {targets}",
-    "section": "",
-    "text": "Overview\nThe {targets} R package offers a superior workflow compared to a script-based approach, addressing several common challenges:\n\nManaging a sequence of computational steps : {targets} allows you to define a pipeline of computational steps, specifying the dependencies and relationships between them.\nSelective updates : With {targets}, you only need to update the specific steps affected by a change. It intelligently determines which steps are affected and updates them accordingly, saving time and computational resources.\nEnsuring validity of results : {targets} automatically tracks the relationships between steps and ensures that the results at the end of the pipeline remain valid, even if intermediate steps change.\n\nKey advantages of the {targets} workflow over script-based approaches include:\n\nReproducibility : By explicitly defining dependencies, {targets} ensures that changes in one step trigger the re-evaluation of dependent steps, maintaining reproducibility.\nEfficiency : Instead of rerunning all scripts, {targets} selectively executes only the affected steps, optimizing computational efficiency.\nScalability : {targets} provides a clear overview of dependencies, making it easier to manage and scale complex workflows with numerous scripts.\nSimplified file management : {targets} automatically manages input and output files, removing the burden of manually tracking file dependencies and their locations.\n\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nDownload a new R project as a zip file (green “Code” button -&gt; “Download ZIP”). (If you are familiar with git/github, feel free to clone it directly.)\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made earlier into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun `tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+    "text": "August 14-15, 2023\n\n9 am - 5 pm\n\n\n\nLouisa Smith\nAssistant Professor\nDepartment of Health Sciences, Northeastern University\nl.smith@northeastern.edu"
   },
   {
     "objectID": "day-1/08-statistics.html",
@@ -252,7 +214,6 @@
     "href": "day-1/08-statistics.html#slides",
     "title": "Finer control over statistics",
     "section": "",
-<<<<<<< HEAD
     "text": "Open the slides in a new tab here."
   },
   {
@@ -263,11 +224,11 @@
     "text": "Open the slides in a new tab here."
   },
   {
-    "objectID": "day-1/02-github.html#exercise",
-    "href": "day-1/02-github.html#exercise",
+    "objectID": "day-1/02-github.html#exercises",
+    "href": "day-1/02-github.html#exercises",
     "title": "Introduction to Git and GitHub",
-    "section": "Exercise",
-    "text": "Exercise\n\nFork the repo at https://github.com/louisahsmith/epi590r-in-class by clicking “Fork” in the upper right.\n\nOn the next page, click “Create fork”. Forking a repository creates a copy that belongs to you.1 This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don’t have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a pull request).\nOn your fork of the repository, click the green “Code” button. We are going to clone the repository to your computer using HTTPS. HTTPS should already be underlined, but if, not, select it. Copy the URL (this should have your username, not mine!).\n\nOpen up RStudio. Go to File &gt; New Project. Choose “Version Control” then “Git” on the next page.\n\nPaste the URL you copied earlier. You can name the project directory whatever you want, but I find it’s easiest if it has the same name as the repo. Then choose where you want to store the project.2 You can browse the file system on your computer to do so. For me, this will create the folder /Users/l.smith/Documents/Teaching/Emory/epi590r-in-class/ and everything in the repo will be downloaded to that folder. Write down this path somewhere if you can’t remember it, so you can find it later!\nYou can select “Open in new session” if you have already been doing something in R and want to keep that other RStudio window open. Then “Create Project”.\n\nFrom the filepane in RStudio, open README.md. Write your name in the file and save.\nIn your Git pane, you’ll see that file pop up because it has been modified (M). When you click on the checkbox, you are staging the file.3 Then click “Commit”.\n\nYou’ll see a diff of the changes you made to that file. If you don’t like them, you can revert. Add a commit message to explain what changes you’ve made. Then “Commit”, close the new window that opens, and then “Push”.4\n\nGo back to your web browser to check your repo! What do you notice?"
+    "section": "Exercises",
+    "text": "Exercises\n\nFork the repo at https://github.com/louisahsmith/epi590r-in-class by clicking “Fork” in the upper right.\n\nOn the next page, click “Create fork”. Forking a repository creates a copy that belongs to you.1 This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don’t have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a pull request).\nOn your fork of the repository, click the green “Code” button. We are going to clone the repository to your computer using HTTPS. HTTPS should already be underlined, but if, not, select it. Copy the URL (this should have your username, not mine!).\n\nOpen up RStudio. Go to File &gt; New Project. Choose “Version Control” then “Git” on the next page.\n\nPaste the URL you copied earlier. You can name the project directory whatever you want, but I find it’s easiest if it has the same name as the repo. Then choose where you want to store the project.2 You can browse the file system on your computer to do so. For me, this will create the folder /Users/l.smith/Documents/Teaching/Emory/epi590r-in-class/ and everything in the repo will be downloaded to that folder. Write down this path somewhere if you can’t remember it, so you can find it later!\nYou can select “Open in new session” if you have already been doing something in R and want to keep that other RStudio window open. Then “Create Project”.\n\nFrom the filepane in RStudio, open README.md. Write your name in the file and save.\nIn your Git pane, you’ll see that file pop up because it has been modified (M). When you click on the checkbox, you are staging the file.3 Then click “Commit”.\n\nYou’ll see a diff of the changes you made to that file. If you don’t like them, you can revert. Add a commit message to explain what changes you’ve made. Then “Commit”, close the new window that opens, and then “Push”.4\n\nGo back to your web browser to check your repo! What do you notice?"
   },
   {
     "objectID": "day-1/02-github.html#resources",
@@ -317,8 +278,5 @@
     "title": "R Resources",
     "section": "",
     "text": "R for Data Science Slack learning group: https://www.rfordatasci.com/about/\nMore extensive Harvard course covering R and other aspects of computing: https://id529.github.io/\nRMarkdown book: https://bookdown.org/yihui/rmarkdown/\nQuarto: https://quarto.org/\nInstalling LateX to generate PDFs with RMarkdown or Quarto: https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html\nCheat sheets: https://posit.co/resources/cheatsheets/"
-=======
-    "text": "Overview\nHaving a solid R workflow is incredibly important for efficient and reproducible data analysis. It involves key practices like using R projects, leveraging the {here} package, and restarting the R session regularly. R projects provide a structured and isolated environment, ensuring project-specific settings and fostering collaboration. The {here} package simplifies file path management, boosting code portability across different systems, and saving you from the headaches of dealing with setwd(). Additionally, restarting the R session helps eliminate potential issues and ensures a clean workspace, reducing errors and allowing you to start fresh with your code execution.\n\n\nSlides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nCreate an R project for this workshop (you do want to check off “Use renv” – we’ll get to that later)\nInstall the {here} package\nDownload the .csv file at https://raw.githubusercontent.com/louisahsmith/reproducible-epi-workshop-2023/main/data/nlsy.csv\nCreate a data folder within your R project directory and move the nlsy.csv file there.\nRun here::here(\"data\", \"nlsy.csv\") and see what file path prints out. Compare with your neighbor.\nRun read.csv(here::here(\"data\", \"nlsy.csv\")) to make sure your can read in the file.\nRestart the R session to start fresh!\n\n\n\nResources\n\nJenny Bryan’s blog post: Project-oriented workflow\nAnother blog post by Malcolm Barrett\n{here} package documentation:"
->>>>>>> 8630c48aab5994ea4e9708a6b8db05f39e7ac97a
   }
 ]
