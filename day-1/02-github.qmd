@@ -18,7 +18,7 @@ Open the slides in a new tab [here](slides/02-github.qmd){target="_blank"}.
 
     ![](images/Screenshot%202023-08-10%20at%202.28.20%20PM.png)
 
-    On the next page, click "Create fork". Forking a repository creates a copy that belongs to you.[^1] This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don't have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a *pull request*).
+    On the next page, click "Create fork". You only need the main branch, so keep that box checked. Forking a repository creates a copy that belongs to you.[^1] This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don't have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a *pull request*).
 
 2.  On **your** fork of the repository, click the green "Code" button. We are going to *clone* the repository to your computer using *HTTPS*. HTTPS should already be underlined, but if, not, select it. Copy the URL (this should have your username, not mine!).
 

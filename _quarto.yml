@@ -24,6 +24,8 @@ website:
         file: data.qmd
       - text: "R Resources"
         file: resources.qmd
+      - text: "Cloud"
+        href: https://posit.cloud/content/6310033
   sidebar: 
     contents: 
       - about.qmd

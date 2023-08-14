@@ -19,14 +19,15 @@ Open the slides in a new tab [here](slides/03-projects.qmd){target="_blank"}.
 2.  In your computer file browser, find your `epi590r-in-class` repo and create an `R` folder and a `data` folder. Within the `data` folder add a `raw` folder and a `clean` folder. Put the `.csv` file in the `data/raw` folder and the script in `R` folder. Your file structure should look like this:
 
     ```         
-    ├── epi590r-in-class.Rproj
-    ├── README.md
-    ├── R/
-    │   ├── clean-data-bad.R
-    ├── data/
-    │   ├── raw/
-    │   │   ├── nlsy.csv
-    │   ├── clean/
+    epi590r-in-class/
+    ├─ epi590r-in-class.Rproj
+    ├─ README.md
+    ├─ R/
+    │   └─ clean-data-bad.R
+    ├─ data/
+    │   ├─ raw/
+    │   │  └─ nlsy.csv
+    │   └─ clean/
     ```
 
 3.  Return to RStudio. Look to the filepane to confirm the files are there.
