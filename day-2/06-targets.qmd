@@ -1,0 +1,30 @@
+---
+title: "2.6 `{targets}`"
+toc-location: left
+---
+
+# Slides
+
+Open the slides in a new tab [here](slides/06-targets.qmd){target="_blank"}.
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="slides/06-targets.html"></iframe>
+```
+</div>
+
+# Exercises
+
+1. Clone [this repo](https://github.com/louisahsmith/reproducible-epi-workshop-2023) to your computer as a new R project.
+2. Examine the file structure, the code, the `_targets.R` file.
+3. Run `tar_make()`.
+4. Examine everything again and see what's new.
+5. Put the Poisson regression and table you made yesterday (look in your `R/regression-examples.R` file in your in-class R project!) into functions and add to the appropriate folders.
+6. Add `tar_target()` calls to `_targets.R`.
+7. Add a code chunk to output the table in `my-analysis.qmd`.
+8. Run `tar_outdated()`.
+9. Run `tar_make()`.
+
+# Resources
+
+- The [user manual](https://books.ropensci.org/targets/) is a great resource for learning more

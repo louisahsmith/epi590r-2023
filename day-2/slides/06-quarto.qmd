@@ -1,6 +1,0 @@
----
-title: "Creating new projects"
-subtitle: "Starting from scratch"
-format: revealjs
----
-

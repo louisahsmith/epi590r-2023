@@ -1,5 +1,5 @@
 ---
-title: "Finer control over statistics"
+title: "1.8 Finer control over statistics"
 execute: 
   eval: false
 ---

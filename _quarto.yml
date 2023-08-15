@@ -32,7 +32,9 @@ website:
       - auto: "day-1/*"
       - text: "Day 1 slides pdf"
         file: day-1/slides/day-1-slides.pdf
-      # - auto: day-2
+      - auto: "day-2/*"
+      - text: "Day 2 slides pdf"
+        file: day-2/slides/day-2-slides.pdf
       - resources.qmd
 
 format:

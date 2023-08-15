@@ -1,0 +1,32 @@
+---
+title: "2.3 Quarto tables, figures, and stats"
+---
+
+Open the slides in a new tab [here](slides/03-quarto3.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/03-quarto3.html"></iframe>
+```
+
+</div>
+
+## Exercises
+
+Return to the quarto document with the tables.
+
+1. Choose a table to label and caption, and then write a sentence that *cross-references* it (e.g., Table 1 shows the descriptive statistics)
+2. From that table, choose at least two statistics to pull out of the table and include in the text using `inline_text()`.
+3. Add another statistic to the text that you calculate yourself using the `nlsy` data, e.g., the mean number of hours of sleep on weekends.
+4. Render the document! Make sure it renders, and then commit and push.
+
+## Resources
+
+-   The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
+-   Feel free to look at the [source code](https://github.com/louisahsmith/epi590r-2023) of this site
+
+Additional resources for R Markdown will have a lot of overlap:
+
+-   [The Definitive Guide to R Markdown](https://bookdown.org/yihui/rmarkdown/)
+-   [The R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)

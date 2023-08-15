@@ -1,0 +1,68 @@
+---
+title: "2.4 `{renv}`"
+---
+
+Open the slides in a new tab [here](slides/04-renv.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/04-renv.html"></iframe>
+```
+
+</div>
+
+## Exercises
+
+1. Install `{renv}`, then initialize  in your in-class R project with `renv::init()`
+
+2. Find and open the `renv.lock` file to look at the packages that are included.
+
+3.  Install a new R package of your choice. (Not sure what to choose? Try one of [these fun packages](https://medium.com/geekculture/15-fun-r-packages-you-may-not-know-of-fb25a9dcd627). For example, I did `install.packages("hadley/emo")`.)
+
+4.  Create an R script and save it in your R project. Include some code that requires the package. For example:
+
+```{r}
+emo::ji("banana")
+```
+
+4.  Run `renv::status()` to make sure your project picked up the package as a dependency.
+
+5.  Run `renv::snapshot()` to record that package in your lockfile.
+
+6.  Open your lockfile and look for your new package. For example, mine now has:
+
+```         
+"emo": {
+      "Package": "emo",
+      "Version": "0.0.0.9000",
+      "Source": "git",
+      "RemoteType": "git",
+      "RemoteUrl": "https://github.com/hadley/emo",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "hadley",
+      "RemoteRepo": "emo",
+      "RemoteRef": "master",
+      "RemoteSha": "3f03b11491ce3d6fc5601e210927eff73bf8e350",
+      "Requirements": [
+        "R",
+        "assertthat",
+        "crayon",
+        "glue",
+        "lubridate",
+        "magrittr",
+        "purrr",
+        "rlang",
+        "stringr",
+        "utils"
+      ],
+      "Hash": "eb32b8f0bb50621ad498f5d836b546a4"
+    },
+```
+
+7. Commit and push. Now anyone can recreate the state of your packages at this moment!
+
+## Resources
+
+-   [Official `{renv}` documentation](https://rstudio.github.io/renv/)
+-   [`{renv}` GitHub repository](https://github.com/rstudio/renv)

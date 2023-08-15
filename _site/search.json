@@ -9,77 +9,77 @@
   {
     "objectID": "day-1/03-projects.html",
     "href": "day-1/03-projects.html",
-    "title": "R projects and file management",
+    "title": "1.3 R projects and file management",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/03-projects.html#exercises",
     "href": "day-1/03-projects.html#exercises",
-    "title": "R projects and file management",
+    "title": "1.3 R projects and file management",
     "section": "Exercises",
     "text": "Exercises\n\nDownload the .R script here and the .csv file here.\nIn your computer file browser, find your epi590r-in-class repo and create an R folder and a data folder. Within the data folder add a raw folder and a clean folder. Put the .csv file in the data/raw folder and the script in R folder. Your file structure should look like this:\nepi590r-in-class/\n├─ epi590r-in-class.Rproj\n├─ README.md\n├─ R/\n│   └─ clean-data-bad.R\n├─ data/\n│   ├─ raw/\n│   │  └─ nlsy.csv\n│   └─ clean/\nReturn to RStudio. Look to the filepane to confirm the files are there.\nLook at your Git pane. What do you notice? Stage, commit, and push the changes you’ve made.\nTry to run the code, line-by-line, in clean-data-bad.R. What do you notice?\nGo to Tools &gt; Global Options and under General, change your settings so that they match these:\n\nClose RStudio. Open it up again by opening the epi590r-in-class.Rproj file in your file browser. You should have a clean environment!\n\nMacWindows"
   },
   {
     "objectID": "day-1/03-projects.html#resources",
     "href": "day-1/03-projects.html#resources",
-    "title": "R projects and file management",
+    "title": "1.3 R projects and file management",
     "section": "Resources",
     "text": "Resources\n\nJenny Bryan’s blog post: Project-oriented workflow"
   },
   {
     "objectID": "day-1/06-gtsummary.html",
     "href": "day-1/06-gtsummary.html",
-    "title": "Descriptive tables with {gtsummary}",
+    "title": "1.6 Descriptive tables with {gtsummary}",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/06-gtsummary.html#slides",
     "href": "day-1/06-gtsummary.html#slides",
-    "title": "Descriptive tables with {gtsummary}",
+    "title": "1.6 Descriptive tables with {gtsummary}",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/04-here.html",
     "href": "day-1/04-here.html",
-    "title": "{here} package",
+    "title": "1.4 {here} package",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/04-here.html#exercises",
     "href": "day-1/04-here.html#exercises",
-    "title": "{here} package",
+    "title": "1.4 {here} package",
     "section": "Exercises",
     "text": "Exercises\n\nInstall the {here} package:\ninstall.packages(\"here\")\nIn the console, run:\nhere::here() to print your project directory\ngetwd() to print your working directory\nWhat do you notice?\nIn the console, run:\nsetwd(\"data\") to set your working directory\nThen run the same lines as above. What do you notice?\nDownload the .R script here and use your file browser to put it in the R folder in your project. Open the script and run through the code line-by-line. Compare it with the code from the last section."
   },
   {
     "objectID": "day-1/04-here.html#resources",
     "href": "day-1/04-here.html#resources",
-    "title": "{here} package",
+    "title": "1.4 {here} package",
     "section": "Resources",
     "text": "Resources\n\n{here} package documentation\nA blog post by Malcolm Barrett"
   },
   {
     "objectID": "day-1/05-new-projects.html",
     "href": "day-1/05-new-projects.html",
-    "title": "Starting from scratch",
+    "title": "1.5 Starting from scratch",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/05-new-projects.html#exercises",
     "href": "day-1/05-new-projects.html#exercises",
-    "title": "Starting from scratch",
+    "title": "1.5 Starting from scratch",
     "section": "Exercises",
     "text": "Exercises\n\nCreate a new project either from File &gt; New Project or using the drop-down menu in the upper-right corner of RStudio. This time, choose “New Directory” and then “New Project”.\n\nChoose a name for your new project and where to store it. Check “Create a git repository.” You can leave “Use renv with this project” unchecked (for now!).\n\nLook at the git pane. What do you notice compared to the first time we looked at this pane? Stage and commit the files (I usually use “initial commit” as my first commit message since I haven’t don’t anything yet!). You’ll notice the “Push” button is grayed out – we’ll have to fix that!\n\nOpen up your web browser to GitHub. There are a few different ways to make a new repository; click one of them.\n\nFrom github.comFrom github.com/username\n\n\n\n\n\n\n\n\n\nChoose a name (preferably one that matches the name you gave your R project). You can also add a description and choose to make it private, if you wish. (If private, you’ll have to invite the teaching team as collaborators so we can grade it!) You don’t need to click anything else.\n\nGitHub is going to give you some options for code. You’re going to use the second option: “push an existing repository from the command line” because you’ve already initialized the repo in RStudio. You are going to run this code in the terminal. You’ll find that in a tab next to the console.\n\n\n\nEven though it looks like you can copy and paste the 3 lines of code at once, you can’t! You’ll get the error you see above (I do this every time). Instead, copy and paste and run them one at a time. Then refresh your GitHub page!\nCreate a new file called secrets.txt (you can do this via File &gt; New File &gt; Text file, then save the file). Write down your deepest, darkest secrets in there.\nUh oh! It shows up in the git pane. You don’t want to accidentally commit this to your repo!\nOpen .gitignore via the RStudio filepane.1 Add “secrets.txt” below the files that RStudio helpfully ignored for you. Then save. What happened in the git pane?\n\nWhenever you have something that shouldn’t be shared with the world, like a password or a dataset, you should add it to the .gitignore. There are a lot of examples here of how you can match folders and file patterns.\nSet up your folders how you’d like in your repo. For example, along with an R folder and a data folder, I like to have a documents folder. Find some data online, download it, and store it in your data folder. Commit and push to GitHub!\nSome fun options for data are:\n\nhttps://data.fivethirtyeight.com/\nhttps://github.com/rfordatascience/tidytuesday#datasets\nhttps://github.com/higgi13425/medicaldata/tree/master/data (descriptions: https://higgi13425.github.io/medicaldata/#list-of-datasets)"
   },
   {
     "objectID": "day-1/05-new-projects.html#resources",
     "href": "day-1/05-new-projects.html#resources",
-    "title": "Starting from scratch",
+    "title": "1.5 Starting from scratch",
     "section": "Resources",
     "text": "Resources\n\nThis is a slightly simpler (I think) version of the Existing project, GitHub last workflow\n.gitignore patterns\n.gitignore documentation"
   },
@@ -175,25 +175,116 @@
     "text": "Honor Code\nYou are bound by Emory University’s Student Honor and Conduct Code. RSPH requires that all material submitted by a student fulfilling his or her academic course of study must be the original work of the student. Violations of academic honor include any action by a student indicating dishonesty or a lack of integrity in academic ethics. Academic dishonesty refers to cheating, plagiarizing, assisting other students without authorization, lying, tampering, or stealing in performing any academic work, and will not be tolerated under any circumstances.\nThe RSPH Honor Code states: “Plagiarism is the act of presenting as one’s own work the expression, words, or ideas of another person whether published or unpublished (including the work of another student). A writer’s work should be regarded as his/her own property.” (http://www.sph.emory.edu/cms/current_students/enrollment_services/honor_code.html)"
   },
   {
-    "objectID": "day-2/06-quarto.html",
-    "href": "day-2/06-quarto.html",
-    "title": "Reports and manuscripts with Quarto",
+    "objectID": "day-2/03-quarto3.html",
+    "href": "day-2/03-quarto3.html",
+    "title": "2.3 Quarto tables, figures, and stats",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
-    "objectID": "day-2/06-quarto.html#exercises",
-    "href": "day-2/06-quarto.html#exercises",
-    "title": "Reports and manuscripts with Quarto",
+    "objectID": "day-2/03-quarto3.html#exercises",
+    "href": "day-2/03-quarto3.html#exercises",
+    "title": "2.3 Quarto tables, figures, and stats",
     "section": "Exercises",
-    "text": "Exercises"
+    "text": "Exercises\nReturn to the quarto document with the tables.\n\nChoose a table to label and caption, and then write a sentence that cross-references it (e.g., Table 1 shows the descriptive statistics)\nFrom that table, choose at least two statistics to pull out of the table and include in the text using inline_text().\nAdd another statistic to the text that you calculate yourself using the nlsy data, e.g., the mean number of hours of sleep on weekends.\nRender the document! Make sure it renders, and then commit and push."
   },
   {
-    "objectID": "day-2/06-quarto.html#resources",
-    "href": "day-2/06-quarto.html#resources",
-    "title": "Reports and manuscripts with Quarto",
+    "objectID": "day-2/03-quarto3.html#resources",
+    "href": "day-2/03-quarto3.html#resources",
+    "title": "2.3 Quarto tables, figures, and stats",
     "section": "Resources",
     "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+  },
+  {
+    "objectID": "day-2/02-quarto2.html",
+    "href": "day-2/02-quarto2.html",
+    "title": "2.2 Quarto options",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/02-quarto2.html#exercises",
+    "href": "day-2/02-quarto2.html#exercises",
+    "title": "2.2 Quarto options",
+    "section": "Exercises",
+    "text": "Exercises\n\nDownload this quarto document with some {gtsummary} tables from yesterday\nThere’s an error in the code! Try to render it. Play around with eval: and error: chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error.\nI don’t like the output from the first chunk, where the passages are loaded. Make it so that we don’t see this chunk’s code or output.\nPlay around with themes!"
+  },
+  {
+    "objectID": "day-2/02-quarto2.html#resources",
+    "href": "day-2/02-quarto2.html#resources",
+    "title": "2.2 Quarto options",
+    "section": "Resources",
+    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+  },
+  {
+    "objectID": "day-2/05-functions.html",
+    "href": "day-2/05-functions.html",
+    "title": "2.5 functions",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/05-functions.html#exercises",
+    "href": "day-2/05-functions.html#exercises",
+    "title": "2.5 functions",
+    "section": "Exercises",
+    "text": "Exercises\n\nSquare a number. You’re tired of writing x^2 when you want to square x, so you want a function to square a number. You can call it square(). I showed this in the slides, now try on your own!\n\n\n# start out with a number to test\nx &lt;- 3\n# you'll want your function to return this number\nx^2\nsquare &lt;- function() {\n  \n}\n# test it out\nsquare(x)\nsquare(53)\n53^2 # does this match?\n\n\nRaise to any power. You don’t just want to square numbers, you want to raise them to higher powers too. Make a function that uses two arguments, x for a number, and power for the power. Call it raise().\n\n\nraise &lt;- function() {\n  \n}\n\n# test with\nraise(x = 2, power = 4)\n# should give you\n2^4\n\n\nChange your raise() function to default to squaring x when the user doesn’t enter a value for power.\n\n\n# test\nraise(x = 5)\n# should give you\n5^2"
+  },
+  {
+    "objectID": "day-2/05-functions.html#resources",
+    "href": "day-2/05-functions.html#resources",
+    "title": "2.5 functions",
+    "section": "Resources",
+    "text": "Resources\n\nAdvanced R"
+  },
+  {
+    "objectID": "day-2/06-targets.html",
+    "href": "day-2/06-targets.html",
+    "title": "2.6 {targets}",
+    "section": "",
+    "text": "Slides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nClone this repo to your computer as a new R project.\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made yesterday (look in your R/regression-examples.R file in your in-class R project!) into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+  },
+  {
+    "objectID": "day-2/01-quarto.html",
+    "href": "day-2/01-quarto.html",
+    "title": "2.1 Reports and manuscripts with Quarto",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/01-quarto.html#exercises",
+    "href": "day-2/01-quarto.html#exercises",
+    "title": "2.1 Reports and manuscripts with Quarto",
+    "section": "Exercises",
+    "text": "Exercises\n\nOpen up your epi590r-in-class project. Make sure you’re starting with a fresh session and you’ve committed and pushed all your changes from yesterday.\nCreate a new Quarto html document.\nFile &gt; New File &gt; Quarto Document\n\nRender it.\nPlay around. Run each of the chunks. Toggle between the Source and Visual modes. Show the outline."
+  },
+  {
+    "objectID": "day-2/01-quarto.html#resources",
+    "href": "day-2/01-quarto.html#resources",
+    "title": "2.1 Reports and manuscripts with Quarto",
+    "section": "Resources",
+    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+  },
+  {
+    "objectID": "day-2/04-renv.html",
+    "href": "day-2/04-renv.html",
+    "title": "2.4 {renv}",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/04-renv.html#exercises",
+    "href": "day-2/04-renv.html#exercises",
+    "title": "2.4 {renv}",
+    "section": "Exercises",
+    "text": "Exercises\n\nInstall {renv}, then initialize in your in-class R project with renv::init()\nFind and open the renv.lock file to look at the packages that are included.\nInstall a new R package of your choice. (Not sure what to choose? Try one of these fun packages. For example, I did install.packages(\"hadley/emo\").)\nCreate an R script and save it in your R project. Include some code that requires the package. For example:\n\n\nemo::ji(\"banana\")\n\n\nRun renv::status() to make sure your project picked up the package as a dependency.\nRun renv::snapshot() to record that package in your lockfile.\nOpen your lockfile and look for your new package. For example, mine now has:\n\n\"emo\": {\n      \"Package\": \"emo\",\n      \"Version\": \"0.0.0.9000\",\n      \"Source\": \"git\",\n      \"RemoteType\": \"git\",\n      \"RemoteUrl\": \"https://github.com/hadley/emo\",\n      \"RemoteHost\": \"api.github.com\",\n      \"RemoteUsername\": \"hadley\",\n      \"RemoteRepo\": \"emo\",\n      \"RemoteRef\": \"master\",\n      \"RemoteSha\": \"3f03b11491ce3d6fc5601e210927eff73bf8e350\",\n      \"Requirements\": [\n        \"R\",\n        \"assertthat\",\n        \"crayon\",\n        \"glue\",\n        \"lubridate\",\n        \"magrittr\",\n        \"purrr\",\n        \"rlang\",\n        \"stringr\",\n        \"utils\"\n      ],\n      \"Hash\": \"eb32b8f0bb50621ad498f5d836b546a4\"\n    },\n\nCommit and push. Now anyone can recreate the state of your packages at this moment!"
+  },
+  {
+    "objectID": "day-2/04-renv.html#resources",
+    "href": "day-2/04-renv.html#resources",
+    "title": "2.4 {renv}",
+    "section": "Resources",
+    "text": "Resources\n\nOfficial {renv} documentation\n{renv} GitHub repository"
   },
   {
     "objectID": "index.html",
@@ -205,70 +296,70 @@
   {
     "objectID": "day-1/08-statistics.html",
     "href": "day-1/08-statistics.html",
-    "title": "Finer control over statistics",
+    "title": "1.8 Finer control over statistics",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/08-statistics.html#slides",
     "href": "day-1/08-statistics.html#slides",
-    "title": "Finer control over statistics",
+    "title": "1.8 Finer control over statistics",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/02-github.html",
     "href": "day-1/02-github.html",
-    "title": "Introduction to Git and GitHub",
+    "title": "1.2 Introduction to Git and GitHub",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/02-github.html#exercises",
     "href": "day-1/02-github.html#exercises",
-    "title": "Introduction to Git and GitHub",
+    "title": "1.2 Introduction to Git and GitHub",
     "section": "Exercises",
     "text": "Exercises\n\nFork the repo at https://github.com/louisahsmith/epi590r-in-class by clicking “Fork” in the upper right.\n\nOn the next page, click “Create fork”. You only need the main branch, so keep that box checked. Forking a repository creates a copy that belongs to you.1 This is what you want to do, for example, if you want to make some changes to an R package that someone else has written. You don’t have the ability to change the original repository, but you can pull any future changes the owner makes so that yours is always up to date, and you can ask them to pull in to their version any changes that you make (a pull request).\nOn your fork of the repository, click the green “Code” button. We are going to clone the repository to your computer using HTTPS. HTTPS should already be underlined, but if, not, select it. Copy the URL (this should have your username, not mine!).\n\nOpen up RStudio. Go to File &gt; New Project. Choose “Version Control” then “Git” on the next page.\n\nPaste the URL you copied earlier. You can name the project directory whatever you want, but I find it’s easiest if it has the same name as the repo. Then choose where you want to store the project.2 You can browse the file system on your computer to do so. For me, this will create the folder /Users/l.smith/Documents/Teaching/Emory/epi590r-in-class/ and everything in the repo will be downloaded to that folder. Write down this path somewhere if you can’t remember it, so you can find it later!\nYou can select “Open in new session” if you have already been doing something in R and want to keep that other RStudio window open. Then “Create Project”.\n\nFrom the filepane in RStudio, open README.md. Write your name in the file and save.\nIn your Git pane, you’ll see that file pop up because it has been modified (M). When you click on the checkbox, you are staging the file.3 Then click “Commit”.\n\nYou’ll see a diff of the changes you made to that file. If you don’t like them, you can revert. Add a commit message to explain what changes you’ve made. Then “Commit”, close the new window that opens, and then “Push”.4\n\nGo back to your web browser to check your repo! What do you notice?"
   },
   {
     "objectID": "day-1/02-github.html#resources",
     "href": "day-1/02-github.html#resources",
-    "title": "Introduction to Git and GitHub",
+    "title": "1.2 Introduction to Git and GitHub",
     "section": "Resources",
     "text": "Resources\n\nHappy Git With R section 12"
   },
   {
     "objectID": "day-1/07-regression.html",
     "href": "day-1/07-regression.html",
-    "title": "Regression tables with {gtsummary}",
+    "title": "1.7 Regression tables with {gtsummary}",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/07-regression.html#slides",
     "href": "day-1/07-regression.html#slides",
-    "title": "Regression tables with {gtsummary}",
+    "title": "1.7 Regression tables with {gtsummary}",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/01-intro.html",
     "href": "day-1/01-intro.html",
-    "title": "Introduction to the course",
+    "title": "1.1 Introduction to the course",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
     "objectID": "day-1/01-intro.html#exercises",
     "href": "day-1/01-intro.html#exercises",
-    "title": "Introduction to the course",
+    "title": "1.1 Introduction to the course",
     "section": "Exercises",
     "text": "Exercises\n\nInstall the {usethis} package:\ninstall.packages(\"usethis\")\nIntroduce yourself to git:\nusethis::use_git_config(user.name = \"Louisa Smith\", user.email = \"louisahsmith@gmail.com\")\nCreate a github token:\nusethis::create_github_token()\nThis will open up your browser. Describe where the token will be used and choose an expiration date. Should you choose “No expiration”? Do as Github says, not as I do.1 You don’t need to change any of the other options. Click “Generate token”.\n\nCopy the token. (I deleted the one in this screenshot immediately, but you shouldn’t share with anyone or save it anywhere but a password manager – treat it like a password.)\n\nBack in R, run this code and paste your token where it says “Enter password”:\ngitcreds::gitcreds_set()\nYou’re all set! Come back to these instructions and repeat whenever your token expires or you are using a different device."
   },
   {
     "objectID": "day-1/01-intro.html#resources",
     "href": "day-1/01-intro.html#resources",
-    "title": "Introduction to the course",
+    "title": "1.1 Introduction to the course",
     "section": "Resources",
     "text": "Resources\n\nHappy Git With R section 7 & 9"
   },

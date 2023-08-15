@@ -1,5 +1,5 @@
 ---
-title: "Regression tables with `{gtsummary}`"
+title: "1.7 Regression tables with `{gtsummary}`"
 execute: 
   eval: false
 ---

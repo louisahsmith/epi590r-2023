@@ -1,0 +1,37 @@
+---
+title: "2.1 Reports and manuscripts with Quarto"
+---
+
+Open the slides in a new tab [here](slides/01-quarto.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/01-quarto.html"></iframe>
+```
+
+</div>
+
+## Exercises
+
+1.  Open up your epi590r-in-class project. Make sure you're starting with a fresh session and you've committed and pushed all your changes from yesterday.
+
+2.  Create a new Quarto html document.
+
+    *File \> New File \> Quarto Document*
+
+    ![](slides/images/Screenshot%202023-08-14%20at%209.40.22%20PM.png)
+
+3.  Render it.
+
+4.  Play around. Run each of the chunks. Toggle between the Source and Visual modes. Show the outline.
+
+## Resources
+
+-   The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
+-   Feel free to look at the [source code](https://github.com/louisahsmith/epi590r-2023) of this site
+
+Additional resources for R Markdown will have a lot of overlap:
+
+-   [The Definitive Guide to R Markdown](https://bookdown.org/yihui/rmarkdown/)
+-   [The R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)

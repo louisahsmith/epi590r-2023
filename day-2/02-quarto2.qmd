@@ -1,0 +1,30 @@
+---
+title: "2.2 Quarto options"
+---
+
+Open the slides in a new tab [here](slides/02-quarto2.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/02-quarto2.html"></iframe>
+```
+
+</div>
+
+## Exercises
+
+1. Download [this quarto document](slides/_gtsummary_quarto.qmd) with some `{gtsummary}` tables from yesterday
+2. There's an error in the code! Try to render it. Play around with `eval:` and `error:` chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error. 
+3. I don't like the output from the first chunk, where the passages are loaded. Make it so that we don't see this chunk's code or output.
+4. Play around with themes!
+
+## Resources
+
+-   The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
+-   Feel free to look at the [source code](https://github.com/louisahsmith/epi590r-2023) of this site
+
+Additional resources for R Markdown will have a lot of overlap:
+
+-   [The Definitive Guide to R Markdown](https://bookdown.org/yihui/rmarkdown/)
+-   [The R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)

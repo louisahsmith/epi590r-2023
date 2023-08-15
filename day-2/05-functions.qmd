@@ -1,0 +1,57 @@
+---
+title: "2.5 Functions"
+---
+
+Open the slides in a new tab [here](slides/05-functions.qmd){target="_blank"}.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="slides/05-functions.html"></iframe>
+```
+
+</div>
+
+## Exercises
+
+1. Square a number. You're tired of writing `x^2` when you want to square `x`, so you want a function to square a number. You can call it `square()`. I showed this in the slides, now try on your own!
+
+```{r, eval = FALSE}
+# start out with a number to test
+x <- 3
+# you'll want your function to return this number
+x^2
+square <- function() {
+  
+}
+# test it out
+square(x)
+square(53)
+53^2 # does this match?
+```
+
+2. Raise to any power. You don't just want to square numbers, you want to raise them to higher powers too. Make a function that uses two arguments, `x` for a number, and `power` for the power. Call it `raise()`.
+
+```{r, eval = FALSE}
+raise <- function() {
+  
+}
+
+# test with
+raise(x = 2, power = 4)
+# should give you
+2^4
+```
+
+3. Change your `raise()` function to default to squaring `x` when the user doesn't enter a value for `power`.
+
+```{r, eval = FALSE}
+# test
+raise(x = 5)
+# should give you
+5^2
+```
+
+## Resources
+
+-   [Advanced R](-	https://adv-r.hadley.nz/functions.html)

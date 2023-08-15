@@ -1,0 +1,69 @@
+---
+title: "Quarto options"
+format: revealjs
+execute: 
+  eval: true
+---
+
+## Chunk options
+
+In your Quarto document, you had a chunk:
+
+````
+```{{r}}
+#| echo: false
+2 * 2
+```
+````
+`#| echo: false` tells `knitr` not to show the code within that chunk
+
+:::aside
+In RMarkdown, you would have written this `{r, echo = FALSE}`. You can still do that with Quarto, but it's generally easier to read, particularly for long options (like caption titles)
+:::
+
+## Chunk options
+
+Some of the ones I find myself using most often:
+
+- `#| eval: false`: Don't evaluate this chunk! Really helpful if you're trying to isolate an error, or have a chunk that takes a long time
+- `#| error: true`: Render this *even if* the chunk causes an error
+- `#| cache: true`: Store the results of this chunk so that it doesn't need to re-run every time, as long as there are no changes
+- `#| warning: false`: Don't print warnings
+- `#| message: false`: Don't print messages
+
+## Document options
+
+You can tell the *entire* document not to evaluate or print code (so just include the text!) at the top:
+```yml
+---
+title: "My document"
+author: Louisa Smith
+format: html
+execute:
+  eval: false
+  echo: false
+---
+```
+Careful! YAML is *really* picky about spacing.
+
+## Document options
+
+There are [lots of different options](https://quarto.org/docs/reference/formats/html.html) for the document
+
+- For example, you can choose a [theme](https://quarto.org/docs/output-formats/html-themes.html):
+```yml
+---
+format:
+  html:
+    theme: yeti
+---
+```
+- Remember the pickiness: when you have a format option, `html:` moves to a new line and the options are indented 2 spaces
+
+## Exercises
+
+Download the quarto document with some `{gtsummary}` tables from yesterday
+
+- There's an error in the code! Try to render it. Play around with `eval:` and `error:` chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error. 
+- I don't like the output from the first chunk, where the passages are loaded. Make it so that we don't see this chunk's code or output.
+- Play around with themes!

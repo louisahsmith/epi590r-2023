@@ -1,5 +1,5 @@
 ---
-title: "Descriptive tables with `{gtsummary}`"
+title: "1.6 Descriptive tables with `{gtsummary}`"
 execute: 
   eval: false
 ---

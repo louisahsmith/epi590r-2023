@@ -1,0 +1,325 @@
+---
+title: "Functions"
+format: revealjs
+execute: 
+  eval: true
+  echo: true
+---
+
+## Functions in R
+
+I've been denoting functions with parentheses: `func()`
+
+We've seen functions such as:
+
+-   `mean()`
+-   `tbl_summary()`
+-   `init()`
+-   `create_github_token`
+
+Functions take **arguments** and return **values**
+
+## Looking inside a function
+
+If you want to see the code within a function, you can just type its name without the parentheses:
+
+```{r}
+usethis::create_github_token
+```
+
+## Structure of a function
+
+::: columns
+::: {.column width="50%"}
+```{r, eval = FALSE}
+func <- function()
+```
+:::
+
+::: {.column width="50%"}
+You can name your function like you do any other object
+
+-   Just avoid names of existing functions
+:::
+:::
+
+## Structure of a function
+
+::: columns
+::: {.column width="50%"}
+```{r, eval = FALSE}
+func <- function(arg1, 
+                 arg2 = default_val)
+}
+```
+:::
+
+::: {.column width="50%"}
+What objects/values do you need to make your function work?
+
+-   You can give them default values to use if the user doesn't specify others
+:::
+:::
+
+## Structure of a function
+
+::: columns
+::: {.column width="50%"}
+```{r, eval = FALSE}
+func <- function(arg1, 
+                 arg2 = default_val) {
+
+} 
+```
+:::
+
+::: {.column width="50%"}
+Everything else goes within curly braces
+
+-   Code in here will essentially look like any other R code, using any inputs to your functions
+:::
+:::
+
+## Structure of a function
+
+::: columns
+::: {.column width="50%"}
+```{r, eval = FALSE}
+func <- function(arg1, 
+                 arg2 = default_val) {
+  new_val <- # do something with args 
+} 
+```
+:::
+
+::: {.column width="50%"}
+Make new objects
+
+-   One thing you'll likely want to do is make new objects along the way
+
+-   These aren't saved to your environment (i.e., you won't see them in the upper-right window) when you run the function
+
+-   You can think of them as being stored in a temporary environment within the function
+:::
+:::
+
+## Structure of a function
+
+::: columns
+::: {.column width="50%"}
+```{r, eval = FALSE}
+func <- function(arg1, 
+                 arg2 = default_val) {
+  new_val <- # do something with args
+  return(new_val)
+} 
+```
+:::
+
+::: {.column width="50%"}
+Return something new that the code has produced
+
+-   The `return()` statement is actually optional. If you don't put it, it will return the last object in the code. When you're starting out, it's safer to always explicitly write out what you want to return.
+:::
+:::
+
+## Example: a new function for the mean
+
+Let's say we are not satisfied with the `mean()` function and want to write our own.
+
+Here's the general structure we'll start with.
+
+::: larger-code
+```{r}
+new_mean <- function() {
+
+}
+```
+:::
+
+## New mean: arguments
+
+We'll want to take the mean of a vector of numbers.
+
+It will help to make an example of such a vector to think about what the input might look like, and to test the function. We'll call it `x`:
+
+::: larger-code
+```{r}
+x <- c(1, 3, 5, 7, 9)
+```
+:::
+
+We can add `x` as an argument to our function:
+
+::: larger-code
+```{r}
+new_mean <- function(x) {
+
+}
+```
+:::
+
+## New mean: function body
+
+Let's think about how we calculate a mean in math, and then translate it into code:
+
+$$\bar{x} = \frac{1}{n}\sum_{i = 1}^n x_i$$
+
+So we need to sum the elements of `x` together, and then divide by the number of elements.
+
+## 
+
+We can use the functions `sum()` and `length()` to help us.
+
+We'll write the code with our test vector first, before inserting it into the function:
+
+::: larger-code
+```{r}
+n <- length(x)
+sum(x) / n
+```
+:::
+
+## New mean: function body
+
+Our code seems to be doing what we want, so let's insert it. To be explicit, I've stored the answer (within the function) as `mean_val`, then returned that value.
+
+::: larger-code
+```{r}
+new_mean <- function(x) {
+  n <- length(x)
+  mean_val <- sum(x) / n
+  return(mean_val)
+}
+```
+:::
+
+## Testing a function
+
+Let's plug in the vector that we created to test it:
+
+```{r}
+new_mean(x = x)
+```
+
+And then try another one we create on the spot:
+
+```{r}
+new_mean(x = c(100, 200, 300))
+```
+
+## Adding another argument
+
+Let's say we plan to be using our `new_mean()` function to calculate proportions (i.e., the mean of a binary variable). Sometimes we'll want to report them as multiplier by multiplying the proportion by 100.
+
+Let's name our new function `prop()`. We'll use the same structure as we did with `new_mean()`.
+
+::: larger-code
+```{r}
+prop <- function(x) {
+  n <- length(x)
+  mean_val <- sum(x) / n
+  return(mean_val)
+}
+```
+:::
+
+## Testing the code
+
+Now we'll want to test on a vector of 1's and 0's.
+
+::: larger-code
+```{r}
+x <- c(0, 1, 1)
+```
+:::
+
+To calculate the proportion and turn it into a percentage, we'll just multiply the mean by 100.
+
+::: larger-code
+```{r}
+multiplier <- 100
+multiplier * sum(x) / length(x)
+```
+:::
+
+## Testing the code
+
+We want to give users the option to choose between a proportion and a percentage. So we'll add an argument `multiplier`. When we want to just return the proportion, we can just set `multiplier` to be 1.
+
+::: larger-code
+```{r}
+multiplier <- 1
+multiplier * sum(x) / length(x)
+```
+
+```{r}
+multiplier <- 100
+multiplier * sum(x) / length(x)
+```
+:::
+
+## Adding another argument
+
+If we add `multiplier` as an argument, we can refer to it in the function body.
+
+::: larger-code
+```{r}
+prop <- function(x, multiplier) {
+  n <- length(x)
+  mean_val <- multiplier * sum(x) / n
+  return(mean_val)
+}
+```
+:::
+
+## Adding another argument
+
+Now we can test:
+
+::: larger-code
+```{r}
+prop(x = c(1, 0, 1, 0), multiplier = 1)
+```
+
+```{r}
+prop(x = c(1, 0, 1, 0), multiplier = 100)
+```
+:::
+
+## Making a default argument
+
+Since we don't want users to have to specify `multiplier = 1` every time they just want a proportion, we can set it as a **default**.
+
+```{r}
+prop <- function(x, multiplier = 1) {
+  n <- length(x)
+  mean_val <- multiplier * sum(x) / n
+  return(mean_val)
+}
+```
+
+Now we only need to specify that argument if we want a percentage.
+
+```{r}
+prop(x = c(0, 1, 1, 1))
+prop(x = c(0, 1, 1, 1), multiplier = 100)
+```
+
+## Caveats
+
+-   This is obviously not the best way to write this function!
+
+-   For example, it will still work if `x = c(123, 593, -192)`.... but it certainly won't give you a proportion or a percentage!
+
+-   We could also put `multiplier =` *any number*, and we'll just be multiplying the answer by that number -- this is essentially meaningless.
+
+-   We also haven't done any checking to see whether the user is even entering numbers! We could put in better error messages so users don't just get an R default error message if they do something wrong.
+
+```{r, error = TRUE}
+prop(x = c("blah", "blah", "blah"))
+```
+
+## Exercises
+
+Create some functions!

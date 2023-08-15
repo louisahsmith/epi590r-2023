@@ -1,0 +1,183 @@
+---
+title: "Quarto tables, figures, and stats"
+format: revealjs
+execute: 
+  eval: true
+---
+
+## Chunks can produce figures and tables
+
+```{r}
+#| echo: fenced
+#| label: tbl-one
+#| tbl-cap: "This is a great table"
+knitr::kable(mtcars)
+```
+
+## Chunks can produce figures or tables
+
+```{r}
+#| echo: fenced
+#| label: fig-hist
+#| fig-cap: "This is a histogram"
+hist(rnorm(100))
+```
+
+
+## Cross-referencing
+
+You can then refer to those with `@tbl-one` and `@fig-hist` and the Table and Figure ordering will be correct (and linked)
+
+::: larger-code
+```         
+@fig-hist contains a histogram and @tbl-one a table.
+```
+:::
+
+gets printed as:
+
+@fig-hist contains a histogram and @tbl-one a table.
+
+::: aside
+There are currently some bugs with cross-referencing in Word docs which will be fixed in the next Quarto version
+:::
+
+## Inline R
+
+Along with just regular text, you can also run R code *within* the text:
+
+::: larger-code
+```
+There were `r knitr::inline_expr("3 + 4")` participants
+```
+:::
+becomes:
+
+There were `r 3 + 4` participants
+
+## Inline stats
+
+I often create a list of stats that I want to report in a manuscript:
+
+```{r}
+#| eval: false
+stats <- list(n = nrow(data),
+              mean_age = mean(data$age))
+```
+
+I can then print these numbers in the text with:
+
+```{r}
+#| echo: false
+stats <- list(n = 1123,
+              mean_age = 43.5)
+```
+
+There were `` `r knitr::inline_expr("stats$n")` `` participants with a mean age of `` `r knitr::inline_expr("stats$mean_age")` ``.
+
+which turns into:
+
+There were `r stats$n` participants with a mean age of `r stats$mean_age`.
+
+## Inline stats from `{gtsummary}`
+
+We saw very, very briefly yesterday:
+```{r}
+#| echo: false
+library(tidyverse)
+nlsy_cols <- c("glasses", "eyesight", "sleep_wkdy", "sleep_wknd", 
+               "id", "nsibs", "samp", "race_eth", "sex", "region", 
+               "income", "res_1980", "res_2002", "age_bir")
+nlsy <- read_csv(here::here("data", "nlsy.csv"), 
+                 na = c("-1", "-2", "-3", "-4", "-5", "-998"),
+                 skip = 1, col_names = nlsy_cols) |> 
+  mutate(region_cat = factor(region, labels = c("Northeast", "North Central", "South", "West")),
+         sex_cat = factor(sex, labels = c("Male", "Female")),
+         race_eth_cat = factor(race_eth, labels = c("Hispanic", "Black", "Non-Black, Non-Hispanic")),
+         eyesight_cat = factor(eyesight, labels = c("Excellent", "Very good", "Good", "Fair", "Poor"))) 
+library(gtsummary)
+income_table <- tbl_uvregression(
+  nlsy,
+  y = income,
+  include = c(
+    sex_cat, race_eth_cat,
+    eyesight_cat, income, age_bir
+  ),
+  method = lm
+)
+```
+```{r}
+inline_text(income_table, variable = "age_bir")
+```
+We pulled a statistic from our univariate table
+
+## If we're making a table, we probably want to report numbers from it
+
+```{r}
+#| echo: fenced
+#| label: tbl-descr
+#| tbl-cap: "Descriptive statistics"
+#| output-location: slide
+table1 <- tbl_summary(
+  nlsy,
+  by = sex_cat,
+  include = c(sex_cat, race_eth_cat, region_cat,
+              eyesight_cat, glasses, age_bir)) |> 
+  add_overall(last = TRUE)
+table1
+```
+
+## I want to report some stats!
+
+How about the median (IQR) age of the male participants at the birth of their first child?
+```{r}
+inline_text(table1, variable = "age_bir", column = "Male")
+```
+
+Or the frequency and percentage of women from the South?
+```{r}
+inline_text(table1, variable = "region_cat", level = "South", column = "Female")
+```
+
+And the overall stats on people who wear glasses?
+```{r}
+inline_text(table1, variable = "glasses", column = "stat_0",
+            pattern = "{n}/{N} ({p}%)")
+```
+
+## Better yet...
+
+We can integrate these into the text of our manuscript:
+
+::: larger-code
+```
+A greater proportion of female (`r knitr::inline_expr('inline_text(table1, variable = "glasses", column = "Female")')`) than male 
+
+(`r knitr::inline_expr('inline_text(table1, variable = "glasses", column = "Male")')`) participants wore glasses.
+```
+:::
+
+Which becomes:
+A greater proportion of female (`r inline_text(table1, variable = "glasses", column = "Female")`) than male (`r inline_text(table1, variable = "glasses", column = "Male")`) participants wore glasses.
+
+## Readability
+
+Because this can be hard to read, I'd suggest storing those stats in a chunk before the text:
+
+````
+```{{r}}
+glasses_f <- inline_text(table1, variable = "glasses", 
+                         column = "Female")
+glasses_m <- inline_text(table1, variable = "glasses", 
+                         column = "Male")
+```
+A greater proportion of female (`r knitr::inline_expr('glasses_f')`) than male (`r knitr::inline_expr('glasses_m')`) participants wore glasses.
+````
+
+## Exercises
+
+Return to the quarto document with the tables.
+
+- Choose a table to label and caption, and then write a sentence that *cross-references* it (e.g., Table 1 shows the descriptive statistics)
+- From that table, choose at least two statistics to pull out of the table and include in the text using `inline_text()`.
+- Add another statistic to the text that you calculate yourself using the `nlsy` data, e.g., the mean number of hours of sleep on weekends.
