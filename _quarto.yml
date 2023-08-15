@@ -59,3 +59,5 @@ revealjs-plugins:
 format-links: false
 highlight-style: nord
 editor: source
+filters:
+  - code-fullscreen

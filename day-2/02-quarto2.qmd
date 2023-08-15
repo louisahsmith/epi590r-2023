@@ -16,8 +16,8 @@ Open the slides in a new tab [here](slides/02-quarto2.qmd){target="_blank"}.
 
 1. Download [this quarto document](slides/_gtsummary_quarto.qmd) with some `{gtsummary}` tables from yesterday
 2. There's an error in the code! Try to render it. Play around with `eval:` and `error:` chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error. 
-3. I don't like the output from the first chunk, where the passages are loaded. Make it so that we don't see this chunk's code or output.
-4. Play around with themes!
+3. I don't like seeing the output from the first chunk, where the passages are loaded. Make it so that we don't see this chunk's code or output.
+4. Play around with [themes](https://quarto.org/docs/output-formats/html-themes.html)!
 
 ## Resources
 

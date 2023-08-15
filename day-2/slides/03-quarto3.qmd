@@ -158,6 +158,7 @@ A greater proportion of female (`r knitr::inline_expr('inline_text(table1, varia
 :::
 
 Which becomes:
+
 A greater proportion of female (`r inline_text(table1, variable = "glasses", column = "Female")`) than male (`r inline_text(table1, variable = "glasses", column = "Male")`) participants wore glasses.
 
 ## Readability
