@@ -186,7 +186,7 @@
     "href": "day-2/03-quarto3.html#exercises",
     "title": "2.3 Quarto tables, figures, and stats",
     "section": "Exercises",
-    "text": "Exercises\nReturn to the quarto document with the tables.\n\nChoose a table to label and caption, and then write a sentence that cross-references it (e.g., Table 1 shows the descriptive statistics)\nFrom that table, choose at least two statistics to pull out of the table and include in the text using inline_text().\nAdd another statistic to the text that you calculate yourself using the nlsy data, e.g., the mean number of hours of sleep on weekends.\nRender the document! Make sure it renders, and then commit and push."
+    "text": "Exercises\nReturn to the quarto document with the tables.\n\nChoose a table to label and caption, and then write a sentence that cross-references it (e.g., Table 1 shows the descriptive statistics)\nFrom that table, choose at least two statistics to pull out of the table and include in the text using inline_text().\nAdd another statistic to the text that you calculate yourself using the nlsy data, e.g., the mean number of hours of sleep on weekends.\nRender the document! Make sure it renders, and then commit and push.\n\nUse this document as a test to see if table captions work."
   },
   {
     "objectID": "day-2/03-quarto3.html#resources",
@@ -263,7 +263,7 @@
     "href": "day-2/01-quarto.html#resources",
     "title": "2.1 Reports and manuscripts with Quarto",
     "section": "Resources",
-    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\nMarkdown syntax guide\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
   },
   {
     "objectID": "day-2/04-renv.html",

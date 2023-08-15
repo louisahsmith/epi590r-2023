@@ -30,6 +30,7 @@ Open the slides in a new tab [here](slides/01-quarto.qmd){target="_blank"}.
 
 -   The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
 -   Feel free to look at the [source code](https://github.com/louisahsmith/epi590r-2023) of this site
+- [Markdown syntax guide](https://www.markdownguide.org/basic-syntax/)
 
 Additional resources for R Markdown will have a lot of overlap:
 

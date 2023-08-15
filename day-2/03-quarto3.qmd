@@ -21,6 +21,8 @@ Return to the quarto document with the tables.
 3. Add another statistic to the text that you calculate yourself using the `nlsy` data, e.g., the mean number of hours of sleep on weekends.
 4. Render the document! Make sure it renders, and then commit and push.
 
+Use [this document](slides/_table_test.qmd) as a test to see if table captions work.
+
 ## Resources
 
 -   The [quarto website](https://quarto.org/docs/guide/) is an amazing resource
