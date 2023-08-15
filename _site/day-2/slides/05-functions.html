@@ -1310,85 +1310,62 @@ margin-right: 0; }
     ui_todo(&quot;\n    Call {ui_code(hint)} to register this token in the \\\n    local Git credential store\n    It is also a great idea to store this token in any password-management \\\n    software that you use&quot;)
     invisible()
 }
-&lt;bytecode: 0x10d9131a0&gt;
+&lt;bytecode: 0x104c98aa0&gt;
 &lt;environment: namespace:usethis&gt;</code></pre>
 </div>
 </div>
 </section>
 <section class="slide level2">
 <h2>Structure of a function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
 <p>You can name your function like you do any other object</p>
 <ul>
 <li>Just avoid names of existing functions</li>
 </ul>
-</div>
-</div>
 </section>
 <section class="slide level2">
 <h2>Structure of a function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, </span>
 <span id="cb4-2"><a href="#cb4-2"></a>                 <span class="at">arg2 =</span> default_val)</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
 <p>What objects/values do you need to make your function work?</p>
 <ul>
 <li>You can give them default values to use if the user doesn’t specify others</li>
 </ul>
-</div>
-</div>
 </section>
 <section class="slide level2">
 <h2>Structure of a function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, </span>
 <span id="cb5-2"><a href="#cb5-2"></a>                 <span class="at">arg2 =</span> default_val) {</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
 <span id="cb5-4"><a href="#cb5-4"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
 <p>Everything else goes within curly braces</p>
 <ul>
 <li>Code in here will essentially look like any other R code, using any inputs to your functions</li>
 </ul>
-</div>
-</div>
 </section>
 <section class="slide level2">
 <h2>Structure of a function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, </span>
 <span id="cb6-2"><a href="#cb6-2"></a>                 <span class="at">arg2 =</span> default_val) {</span>
 <span id="cb6-3"><a href="#cb6-3"></a>  new_val <span class="ot">&lt;-</span> <span class="co"># do something with args </span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
-<p>Make new objects</p>
 <ul>
 <li><p>One thing you’ll likely want to do is make new objects along the way</p></li>
 <li><p>These aren’t saved to your environment (i.e., you won’t see them in the upper-right window) when you run the function</p></li>
 <li><p>You can think of them as being stored in a temporary environment within the function</p></li>
 </ul>
-</div>
-</div>
 </section>
 <section class="slide level2">
 <h2>Structure of a function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, </span>
 <span id="cb7-2"><a href="#cb7-2"></a>                 <span class="at">arg2 =</span> default_val) {</span>
@@ -1396,13 +1373,10 @@ margin-right: 0; }
 <span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">return</span>(new_val)</span>
 <span id="cb7-5"><a href="#cb7-5"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
 <p>Return something new that the code has produced</p>
 <ul>
 <li>The <code>return()</code> statement is actually optional. If you don’t put it, it will return the last object in the code. When you’re starting out, it’s safer to always explicitly write out what you want to return.</li>
 </ul>
-</div>
-</div>
 </section>
 <section class="slide level2">
 <h2>Example: a new function for the mean</h2>
@@ -1486,7 +1460,7 @@ margin-right: 0; }
 </section>
 <section class="slide level2">
 <h2>Adding another argument</h2>
-<p>Let’s say we plan to be using our <code>new_mean()</code> function to calculate proportions (i.e., the mean of a binary variable). Sometimes we’ll want to report them as multiplier by multiplying the proportion by 100.</p>
+<p>Let’s say we plan to be using our <code>new_mean()</code> function to calculate proportions (i.e., the mean of a binary variable). Sometimes we’ll want to report them as as percentage by multiplying the proportion by 100.</p>
 <p>Let’s name our new function <code>prop()</code>. We’ll use the same structure as we did with <code>new_mean()</code>.</p>
 <div class="larger-code">
 <div class="cell">
@@ -1553,7 +1527,6 @@ margin-right: 0; }
 <section class="slide level2">
 <h2>Adding another argument</h2>
 <p>Now we can test:</p>
-<div class="larger-code">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">prop</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">multiplier =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1564,7 +1537,6 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">prop</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">multiplier =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 50</code></pre>
-</div>
 </div>
 </div>
 </section>
@@ -1608,6 +1580,7 @@ margin-right: 0; }
 <section class="slide level2">
 <h2>Exercises</h2>
 <p>Create some functions!</p>
+<p>Create an R script in your project called <code>functions.R</code> to save your work!</p>
 
 <div class="footer footer-default">
 

@@ -29,84 +29,63 @@ usethis::create_github_token
 
 ## Structure of a function
 
-::: columns
-::: {.column width="50%"}
+
 ```{r, eval = FALSE}
 func <- function()
 ```
-:::
 
-::: {.column width="50%"}
 You can name your function like you do any other object
 
 -   Just avoid names of existing functions
-:::
-:::
+
 
 ## Structure of a function
 
-::: columns
-::: {.column width="50%"}
 ```{r, eval = FALSE}
 func <- function(arg1, 
                  arg2 = default_val)
 }
 ```
-:::
 
-::: {.column width="50%"}
 What objects/values do you need to make your function work?
 
 -   You can give them default values to use if the user doesn't specify others
-:::
-:::
 
 ## Structure of a function
 
-::: columns
-::: {.column width="50%"}
+
 ```{r, eval = FALSE}
 func <- function(arg1, 
                  arg2 = default_val) {
 
 } 
 ```
-:::
 
-::: {.column width="50%"}
 Everything else goes within curly braces
 
 -   Code in here will essentially look like any other R code, using any inputs to your functions
-:::
-:::
+
 
 ## Structure of a function
 
-::: columns
-::: {.column width="50%"}
+
 ```{r, eval = FALSE}
 func <- function(arg1, 
                  arg2 = default_val) {
   new_val <- # do something with args 
 } 
 ```
-:::
-
-::: {.column width="50%"}
-Make new objects
 
 -   One thing you'll likely want to do is make new objects along the way
 
 -   These aren't saved to your environment (i.e., you won't see them in the upper-right window) when you run the function
 
 -   You can think of them as being stored in a temporary environment within the function
-:::
-:::
+
 
 ## Structure of a function
 
-::: columns
-::: {.column width="50%"}
+
 ```{r, eval = FALSE}
 func <- function(arg1, 
                  arg2 = default_val) {
@@ -114,14 +93,11 @@ func <- function(arg1,
   return(new_val)
 } 
 ```
-:::
 
-::: {.column width="50%"}
 Return something new that the code has produced
 
 -   The `return()` statement is actually optional. If you don't put it, it will return the last object in the code. When you're starting out, it's safer to always explicitly write out what you want to return.
-:::
-:::
+
 
 ## Example: a new function for the mean
 
@@ -210,7 +186,7 @@ new_mean(x = c(100, 200, 300))
 
 ## Adding another argument
 
-Let's say we plan to be using our `new_mean()` function to calculate proportions (i.e., the mean of a binary variable). Sometimes we'll want to report them as multiplier by multiplying the proportion by 100.
+Let's say we plan to be using our `new_mean()` function to calculate proportions (i.e., the mean of a binary variable). Sometimes we'll want to report them as as percentage by multiplying the proportion by 100.
 
 Let's name our new function `prop()`. We'll use the same structure as we did with `new_mean()`.
 
@@ -277,7 +253,6 @@ prop <- function(x, multiplier) {
 
 Now we can test:
 
-::: larger-code
 ```{r}
 prop(x = c(1, 0, 1, 0), multiplier = 1)
 ```
@@ -285,7 +260,7 @@ prop(x = c(1, 0, 1, 0), multiplier = 1)
 ```{r}
 prop(x = c(1, 0, 1, 0), multiplier = 100)
 ```
-:::
+
 
 ## Making a default argument
 
@@ -323,3 +298,5 @@ prop(x = c("blah", "blah", "blah"))
 ## Exercises
 
 Create some functions!
+
+Create an R script in your project called `functions.R` to save your work!
