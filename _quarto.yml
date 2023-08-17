@@ -19,6 +19,8 @@ website:
         file: about.qmd
       - text: "Course content"
         file: day-1/01-intro.qmd
+      - text: "Final project"
+        file: final.qmd
     right:
       - text: "Data"
         file: data.qmd

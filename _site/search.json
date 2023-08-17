@@ -175,74 +175,39 @@
     "text": "Honor Code\nYou are bound by Emory University’s Student Honor and Conduct Code. RSPH requires that all material submitted by a student fulfilling his or her academic course of study must be the original work of the student. Violations of academic honor include any action by a student indicating dishonesty or a lack of integrity in academic ethics. Academic dishonesty refers to cheating, plagiarizing, assisting other students without authorization, lying, tampering, or stealing in performing any academic work, and will not be tolerated under any circumstances.\nThe RSPH Honor Code states: “Plagiarism is the act of presenting as one’s own work the expression, words, or ideas of another person whether published or unpublished (including the work of another student). A writer’s work should be regarded as his/her own property.” (http://www.sph.emory.edu/cms/current_students/enrollment_services/honor_code.html)"
   },
   {
-    "objectID": "day-2/03-quarto3.html",
-    "href": "day-2/03-quarto3.html",
-    "title": "2.3 Quarto tables, figures, and stats",
+    "objectID": "final.html",
+    "href": "final.html",
+    "title": "Final project",
+    "section": "",
+    "text": "The goal of the project is to conduct a fully reproducible analysis that will be easy to reproduce even if the underlying data changes (say, we have to remove a row of data).\nYou can use any data you want as long as it is able to be shared with the teaching team. Some suggestions were given here.\nThe final project will be graded out of 12 points, which correspond to the objectives listed below.\nYou will “turn in” your project by submitting the link on Canvas to your github repo by August 29. If it is a private repository, please invite louisahsmith, jacobenglert, mariagq922, and emily? as collaborators so that we can access it."
+  },
+  {
+    "objectID": "final.html#specific-objectives",
+    "href": "final.html#specific-objectives",
+    "title": "Final project",
+    "section": "Specific objectives",
+    "text": "Specific objectives\n\nCreate a {gtsummary} table of descriptive statistics about your data (1 pt)\nFit a regression and present well-formatted results from the regression (1 pt)\n\nThe regression doesn’t have to be of any particular scientific interest, and you don’t have to interpret it in any particular way\nYou may use {broom} or {gtsummary} or both\n\nCreate a figure (1 pt)\n\nIt doesn’t need to look pretty; feel free to adapt some of the examples from class, which were as simple as hist(data$variable) and as complicated as the forest plot in the {broom} section\n\nWrite and use a function that does something with the data (1 pt)\n\nIt could be as simple as, for example, a new function that you write by hand to calculate the standard deviation of a variable (like we did with the mean)\n\nCreate and render a quarto document that includes at least:\n\nThe table, regression results, and figure, with appropriate captions (1 pt)\nInline R code in at least 2 places, 1 pulling a statistic from a table (i.e., using gtsummary::inline_text()) and 1 printing something else (like we did with the mean age in the example) (1 pt)\nCross-references to a table and a figure at least once each (1 pt)\nA brief description of the data, including its source (1 pt)\n\nUse the {here} package every time you refer to file paths when reading in data and saving any files (1 pt)\n\nYou must use it at least once. Feel free to save any files that you create (e.g., your figure) in your code\n\nUse the {renv} package to make sure the teaching team can reproduce your results with the same package versions (1 pt)\n\nYou don’t need to include any {renv} code, we can see that you have used it because of the renv.lock file you will include\nRemember if you are having trouble with {renv} to deactivate it, and then only initiate it when you have installed all the packages you will need\n\nCommit and push your work to GitHub as you go (1 pt)\nIn a README file, include any notes necessary for us to easily reproduce your analysis (e.g., “Run script.R and then render document.qmd”) (1 pt)\n\nWe should be able to make a minor change to the underlying data, then re-run the analysis to see how the change affects the results\n\n\n\nRubric\n\n\n\n\n\n\nDescription\nPoints\n\n\n\n\nThere was no attempt to achieve the objective\n0\n\n\nThere is an obvious attempt to achieve the objective, but an error in the code or something similar prevents it from working\n0.5\n\n\nThe objective is fully achieved\n1"
+  },
+  {
+    "objectID": "day-2/04-renv.html",
+    "href": "day-2/04-renv.html",
+    "title": "2.4 {renv}",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
-    "objectID": "day-2/03-quarto3.html#exercises",
-    "href": "day-2/03-quarto3.html#exercises",
-    "title": "2.3 Quarto tables, figures, and stats",
+    "objectID": "day-2/04-renv.html#exercises",
+    "href": "day-2/04-renv.html#exercises",
+    "title": "2.4 {renv}",
     "section": "Exercises",
-    "text": "Exercises\nReturn to the quarto document with the tables.\n\nChoose a table to label and caption, and then write a sentence that cross-references it (e.g., Table 1 shows the descriptive statistics)\nFrom that table, choose at least two statistics to pull out of the table and include in the text using inline_text().\nAdd another statistic to the text that you calculate yourself using the nlsy data, e.g., the mean number of hours of sleep on weekends.\nRender the document! Make sure it renders, and then commit and push.\n\nUse this document as a test to see if table captions work."
+    "text": "Exercises\n\nInstall {renv}, then initialize in your in-class R project with renv::init()\nFind and open the renv.lock file to look at the packages that are included.\nInstall a new R package of your choice. (Not sure what to choose? Try one of these fun packages. For example, I did install.packages(\"hadley/emo\").)\nCreate an R script and save it in your R project. Include some code that requires the package. For example:\n\n\nemo::ji(\"banana\")\n\n\nRun renv::status() to make sure your project picked up the package as a dependency.\nRun renv::snapshot() to record that package in your lockfile.\nOpen your lockfile and look for your new package. For example, mine now has:\n\n\"emo\": {\n      \"Package\": \"emo\",\n      \"Version\": \"0.0.0.9000\",\n      \"Source\": \"git\",\n      \"RemoteType\": \"git\",\n      \"RemoteUrl\": \"https://github.com/hadley/emo\",\n      \"RemoteHost\": \"api.github.com\",\n      \"RemoteUsername\": \"hadley\",\n      \"RemoteRepo\": \"emo\",\n      \"RemoteRef\": \"master\",\n      \"RemoteSha\": \"3f03b11491ce3d6fc5601e210927eff73bf8e350\",\n      \"Requirements\": [\n        \"R\",\n        \"assertthat\",\n        \"crayon\",\n        \"glue\",\n        \"lubridate\",\n        \"magrittr\",\n        \"purrr\",\n        \"rlang\",\n        \"stringr\",\n        \"utils\"\n      ],\n      \"Hash\": \"eb32b8f0bb50621ad498f5d836b546a4\"\n    },\n\nCommit and push. Now anyone can recreate the state of your packages at this moment!"
   },
   {
-    "objectID": "day-2/03-quarto3.html#resources",
-    "href": "day-2/03-quarto3.html#resources",
-    "title": "2.3 Quarto tables, figures, and stats",
+    "objectID": "day-2/04-renv.html#resources",
+    "href": "day-2/04-renv.html#resources",
+    "title": "2.4 {renv}",
     "section": "Resources",
-    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
-  },
-  {
-    "objectID": "day-2/02-quarto2.html",
-    "href": "day-2/02-quarto2.html",
-    "title": "2.2 Quarto options",
-    "section": "",
-    "text": "Open the slides in a new tab here."
-  },
-  {
-    "objectID": "day-2/02-quarto2.html#exercises",
-    "href": "day-2/02-quarto2.html#exercises",
-    "title": "2.2 Quarto options",
-    "section": "Exercises",
-    "text": "Exercises\n\nDownload this quarto document with some {gtsummary} tables from yesterday\nThere’s an error in the code! Try to render it. Play around with eval: and error: chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error.\nI don’t like seeing the output from the first chunk, where the passages are loaded. Make it so that we don’t see this chunk’s code or output.\nPlay around with themes!"
-  },
-  {
-    "objectID": "day-2/02-quarto2.html#resources",
-    "href": "day-2/02-quarto2.html#resources",
-    "title": "2.2 Quarto options",
-    "section": "Resources",
-    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
-  },
-  {
-    "objectID": "day-2/05-functions.html",
-    "href": "day-2/05-functions.html",
-    "title": "2.5 Functions",
-    "section": "",
-    "text": "Open the slides in a new tab here."
-  },
-  {
-    "objectID": "day-2/05-functions.html#exercises",
-    "href": "day-2/05-functions.html#exercises",
-    "title": "2.5 Functions",
-    "section": "Exercises",
-    "text": "Exercises\n\nSquare a number. You’re tired of writing x^2 when you want to square x, so you want a function to square a number. You can call it square(). I showed this in the slides, now try on your own!\n\n\n# start out with a number to test\nx &lt;- 3\n# you'll want your function to return this number\nx^2\nsquare &lt;- function() {\n  \n}\n# test it out\nsquare(x)\nsquare(53)\n53^2 # does this match?\n\n\nRaise to any power. You don’t just want to square numbers, you want to raise them to higher powers too. Make a function that uses two arguments, x for a number, and power for the power. Call it raise().\n\n\nraise &lt;- function() {\n  \n}\n\n# test with\nraise(x = 2, power = 4)\n# should give you\n2^4\n\n\nChange your raise() function to default to squaring x when the user doesn’t enter a value for power.\n\n\n# test\nraise(x = 5)\n# should give you\n5^2"
-  },
-  {
-    "objectID": "day-2/05-functions.html#resources",
-    "href": "day-2/05-functions.html#resources",
-    "title": "2.5 Functions",
-    "section": "Resources",
-    "text": "Resources\n\nAdvanced R"
-  },
-  {
-    "objectID": "day-2/06-targets.html",
-    "href": "day-2/06-targets.html",
-    "title": "2.6 {targets}",
-    "section": "",
-    "text": "Slides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nClone this repo to your computer as a new R project.\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made yesterday (look in your R/regression-examples.R file in your in-class R project!) into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+    "text": "Resources\n\nOfficial {renv} documentation\n{renv} GitHub repository"
   },
   {
     "objectID": "day-2/01-quarto.html",
@@ -266,25 +231,74 @@
     "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\nMarkdown syntax guide\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
   },
   {
-    "objectID": "day-2/04-renv.html",
-    "href": "day-2/04-renv.html",
-    "title": "2.4 {renv}",
+    "objectID": "day-2/06-targets.html",
+    "href": "day-2/06-targets.html",
+    "title": "2.6 {targets}",
+    "section": "",
+    "text": "Slides\nOpen the slides in a new tab here.\n\n\n\n\n\nExercises\n\nClone this repo to your computer as a new R project.\nExamine the file structure, the code, the _targets.R file.\nRun tar_make().\nExamine everything again and see what’s new.\nPut the Poisson regression and table you made yesterday (look in your R/regression-examples.R file in your in-class R project!) into functions and add to the appropriate folders.\nAdd tar_target() calls to _targets.R.\nAdd a code chunk to output the table in my-analysis.qmd.\nRun tar_outdated().\nRun tar_make().\n\n\n\nResources\n\nThe user manual is a great resource for learning more"
+  },
+  {
+    "objectID": "day-2/05-functions.html",
+    "href": "day-2/05-functions.html",
+    "title": "2.5 Functions",
     "section": "",
     "text": "Open the slides in a new tab here."
   },
   {
-    "objectID": "day-2/04-renv.html#exercises",
-    "href": "day-2/04-renv.html#exercises",
-    "title": "2.4 {renv}",
+    "objectID": "day-2/05-functions.html#exercises",
+    "href": "day-2/05-functions.html#exercises",
+    "title": "2.5 Functions",
     "section": "Exercises",
-    "text": "Exercises\n\nInstall {renv}, then initialize in your in-class R project with renv::init()\nFind and open the renv.lock file to look at the packages that are included.\nInstall a new R package of your choice. (Not sure what to choose? Try one of these fun packages. For example, I did install.packages(\"hadley/emo\").)\nCreate an R script and save it in your R project. Include some code that requires the package. For example:\n\n\nemo::ji(\"banana\")\n\n\nRun renv::status() to make sure your project picked up the package as a dependency.\nRun renv::snapshot() to record that package in your lockfile.\nOpen your lockfile and look for your new package. For example, mine now has:\n\n\"emo\": {\n      \"Package\": \"emo\",\n      \"Version\": \"0.0.0.9000\",\n      \"Source\": \"git\",\n      \"RemoteType\": \"git\",\n      \"RemoteUrl\": \"https://github.com/hadley/emo\",\n      \"RemoteHost\": \"api.github.com\",\n      \"RemoteUsername\": \"hadley\",\n      \"RemoteRepo\": \"emo\",\n      \"RemoteRef\": \"master\",\n      \"RemoteSha\": \"3f03b11491ce3d6fc5601e210927eff73bf8e350\",\n      \"Requirements\": [\n        \"R\",\n        \"assertthat\",\n        \"crayon\",\n        \"glue\",\n        \"lubridate\",\n        \"magrittr\",\n        \"purrr\",\n        \"rlang\",\n        \"stringr\",\n        \"utils\"\n      ],\n      \"Hash\": \"eb32b8f0bb50621ad498f5d836b546a4\"\n    },\n\nCommit and push. Now anyone can recreate the state of your packages at this moment!"
+    "text": "Exercises\n\nSquare a number. You’re tired of writing x^2 when you want to square x, so you want a function to square a number. You can call it square(). I showed this in the slides, now try on your own!\n\n\n# start out with a number to test\nx &lt;- 3\n# you'll want your function to return this number\nx^2\nsquare &lt;- function() {\n  \n}\n# test it out\nsquare(x)\nsquare(53)\n53^2 # does this match?\n\n\nRaise to any power. You don’t just want to square numbers, you want to raise them to higher powers too. Make a function that uses two arguments, x for a number, and power for the power. Call it raise().\n\n\nraise &lt;- function() {\n  \n}\n\n# test with\nraise(x = 2, power = 4)\n# should give you\n2^4\n\n\nChange your raise() function to default to squaring x when the user doesn’t enter a value for power.\n\n\n# test\nraise(x = 5)\n# should give you\n5^2"
   },
   {
-    "objectID": "day-2/04-renv.html#resources",
-    "href": "day-2/04-renv.html#resources",
-    "title": "2.4 {renv}",
+    "objectID": "day-2/05-functions.html#resources",
+    "href": "day-2/05-functions.html#resources",
+    "title": "2.5 Functions",
     "section": "Resources",
-    "text": "Resources\n\nOfficial {renv} documentation\n{renv} GitHub repository"
+    "text": "Resources\n\nAdvanced R"
+  },
+  {
+    "objectID": "day-2/02-quarto2.html",
+    "href": "day-2/02-quarto2.html",
+    "title": "2.2 Quarto options",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/02-quarto2.html#exercises",
+    "href": "day-2/02-quarto2.html#exercises",
+    "title": "2.2 Quarto options",
+    "section": "Exercises",
+    "text": "Exercises\n\nDownload this quarto document with some {gtsummary} tables from yesterday\nThere’s an error in the code! Try to render it. Play around with eval: and error: chunk and document options to help you a) find the error and b) render the document despite the error. Then fix the error.\nI don’t like seeing the output from the first chunk, where the passages are loaded. Make it so that we don’t see this chunk’s code or output.\nPlay around with themes!"
+  },
+  {
+    "objectID": "day-2/02-quarto2.html#resources",
+    "href": "day-2/02-quarto2.html#resources",
+    "title": "2.2 Quarto options",
+    "section": "Resources",
+    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
+  },
+  {
+    "objectID": "day-2/03-quarto3.html",
+    "href": "day-2/03-quarto3.html",
+    "title": "2.3 Quarto tables, figures, and stats",
+    "section": "",
+    "text": "Open the slides in a new tab here."
+  },
+  {
+    "objectID": "day-2/03-quarto3.html#exercises",
+    "href": "day-2/03-quarto3.html#exercises",
+    "title": "2.3 Quarto tables, figures, and stats",
+    "section": "Exercises",
+    "text": "Exercises\nReturn to the quarto document with the tables.\n\nChoose a table to label and caption, and then write a sentence that cross-references it (e.g., Table 1 shows the descriptive statistics)\nFrom that table, choose at least two statistics to pull out of the table and include in the text using inline_text().\nAdd another statistic to the text that you calculate yourself using the nlsy data, e.g., the mean number of hours of sleep on weekends.\nRender the document! Make sure it renders, and then commit and push.\n\nUse this document as a test to see if table captions work."
+  },
+  {
+    "objectID": "day-2/03-quarto3.html#resources",
+    "href": "day-2/03-quarto3.html#resources",
+    "title": "2.3 Quarto tables, figures, and stats",
+    "section": "Resources",
+    "text": "Resources\n\nThe quarto website is an amazing resource\nFeel free to look at the source code of this site\n\nAdditional resources for R Markdown will have a lot of overlap:\n\nThe Definitive Guide to R Markdown\nThe R Markdown Cookbook"
   },
   {
     "objectID": "index.html",
